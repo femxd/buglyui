@@ -1,0 +1,254 @@
+// Name:            uCheck
+//
+// Description:     Define style for uCheck Plugin
+//
+// Component:       `.am-ucheck`
+//
+// Sub-objects:     `.am-ucheck-icons`
+//                  `.am-ucheck-checkbox`
+//                  `.am-ucheck-radio`
+//
+// States:
+//
+// Used:            Icon
+//
+// Uses:
+//
+// =============================================================================
+
+/* ==========================================================================
+   Component: uCheck Plugin
+ ============================================================================ */
+
+@ucheck-disabled-color: mix(@gray-light, white, 38%);
+
+.@{ns}checkbox,
+.@{ns}radio,
+.@{ns}checkbox-inline,
+.@{ns}radio-inline {
+  // margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+  transition: color .25s linear;
+  font-size: 14px;
+  line-height: 1.5; // 21px;
+}
+
+label {
+  &.@{ns}checkbox,
+  &.@{ns}radio {
+    font-weight: normal;
+  }
+}
+
+.@{ns}ucheck-icons {
+  color: @gray-light;
+  display: block;
+  height: 20px;
+  top: 2px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.@{ns}radio,
+.@{ns}radio-inline {
+  .@{ns}icon-checked,
+  .@{ns}icon-unchecked {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-table;
+    margin: 0;
+    background-color: transparent;
+    transition: color .25s linear;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 100%;
+    &:before {
+      // speak: none;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background: #42A5F5;
+      margin: -3px 0 0 -3px;
+    }
+  }
+  .@{ns}icon-checked {
+    opacity: 0;
+  }
+  .@{ns}icon-unchecked {
+    opacity: 1;
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+.@{ns}checkbox,
+.@{ns}checkbox-inline {
+  .@{ns}icon-checked,
+  .@{ns}icon-unchecked {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-table;
+    margin: 0;
+    background-color: transparent;
+    transition: color .25s linear;
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px 16px;
+      margin-bottom: -1px;
+    }
+  }
+  
+  .@{ns}icon-checked:before {
+    
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAZZJREFUWAnt2DFLxDAUAOBXz+t64ujSxUkc5MT/II7+Ch1cXFwUB5dbXMTBxR/iKk6CCgoqCNJuLi5Otlet9w5f9UKbpM3LkSGBI9f2Jfl4SRNoEMdxAQ6XGYdtY9osAaMoor9O1EmSjB3OZ9ADTdeLz6DPoGkGTNv7NShm8OIth53bFIpC74QtTxKxIxvXiNu8SiH9BshGv7PVEIIgkA41tSn+j0PR+WsO2zeZFIcPpwIUcaRamVMPr46g3lrWdbjTfghbi11lr1aBpjjUWwNy4BoB9x8yuH7/Uk4JBnDhtIG7dykMnoawfvmpRHLitICIO3nJMRY+hiBFcuO0gL3u5EZah7SB0wIeLodwsDS5HYhIWzgtIAbJkMfPWXl8YSwV3X2O4utq7bMYkViOHkcL8bdgJvfu/67pPhcO+2u0D1ZlklBUc+IaA7GBDMmNawWsQ9rAtQaKSFs4HEf7JcFgseB0byx0YG2+Iz5iu270klSNahOH4xkDq9Cc9zzQNJs+gz6DphkwbV9u1PRN2LRD7vbOvyQ//6y3go2ZKqgAAAAASUVORK5CYII=);
+  }
+
+  .@{ns}icon-unchecked:before {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAH1JREFUWAnt2LENgDAMRFFA7OH9t7InASmSs8BP4eLTQHPo9HRpcmfmdw1+nsHdVrW3C0ZEf454V9XqMV7QgnQvCipIBWjeDSpIBWjeDSpIBWjeDSpIBWjeDSpIBWjeDSpIBWjeDSpIBWjeDSpIBWh+31H3nTD94en8+EPyA6EkCZbvXYnpAAAAAElFTkSuQmCC);
+  }
+  .@{ns}icon-checked {
+    opacity: 0;
+  }
+  .@{ns}icon-unchecked {
+    opacity: 1;
+  }
+}
+
+// .@{ns}radio,
+// .@{ns}radio-inline {
+//   .@{ns}icon-checked:before {
+//     content: @fa-var-dot-circle-o;
+//   }
+//   .@{ns}icon-unchecked:before {
+//     content: @fa-var-circle-o;
+//   }
+// }
+
+.ucheck-state-variant(@color) {
+  .@{ns}ucheck-checkbox,
+  .@{ns}ucheck-radio {
+    // hover
+    &:hover:not(.@{ns}nohover):not(:disabled) + .@{ns}ucheck-icons {
+      color: @color;
+    }
+
+    // checked
+    &:checked + .@{ns}ucheck-icons {
+      color: @color;
+    }
+  }
+}
+
+.@{ns}ucheck-checkbox,
+.@{ns}ucheck-radio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  outline: none !important;
+
+  // hover state
+  &:hover:not(.@{ns}nohover):not(:disabled) + .@{ns}ucheck-icons {
+    color: @global-primary;
+  }
+
+  // checked
+  &:checked + .@{ns}ucheck-icons {
+    color: @global-primary;
+
+    .@{ns}icon-unchecked {
+      opacity: 0;
+    }
+
+    .@{ns}icon-checked {
+      opacity: 1;
+    }
+  }
+
+  // disabled
+  &:disabled + .@{ns}ucheck-icons {
+    cursor: default;
+    color: @ucheck-disabled-color;
+  }
+
+  &:disabled:checked + .@{ns}ucheck-icons {
+    .@{ns}icon-unchecked {
+      opacity: 0;
+    }
+
+    .@{ns}icon-checked {
+      opacity: 1;
+      color: @ucheck-disabled-color;
+    }
+  }
+}
+
+// color modifiers
+.@{ns}checkbox,
+.@{ns}radio,
+.@{ns}checkbox-inline,
+.@{ns}radio-inline {
+  &.@{ns}secondary {
+    .ucheck-state-variant(@global-secondary);
+  }
+
+  &.@{ns}success {
+    .ucheck-state-variant(@global-success);
+  }
+
+  &.@{ns}warning {
+    .ucheck-state-variant(@global-warning);
+  }
+
+  &.@{ns}danger {
+    .ucheck-state-variant(@global-danger);
+  }
+}
+
+// form validate state
+.@{ns}field-error + .@{ns}ucheck-icons {
+  color: @global-danger;
+}
+
+.@{ns}field-valid + .@{ns}ucheck-icons {
+  color: @global-success;
+}
+
+/*
+// Group Addon
+.@{ns}input-group-label {
+  .@{ns}radio,
+  .@{ns}checkbox {
+    margin: -2px 0;
+    padding-left: 15px;
+  }
+}
+
+// Form inline style
+.@{ns}form-inline .@{ns}checkbox,
+.@{ns}form-inline .@{ns}radio {
+  padding-left: 24px;
+}
+*/
