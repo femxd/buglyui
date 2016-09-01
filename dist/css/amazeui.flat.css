@@ -1,4 +1,4 @@
-/*! BuglyUI v1.2.1 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-09-01T10:38:17+0800 */
+/*! BuglyUI v1.2.1 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-09-01T16:28:54+0800 */
 /* ==========================================================================
    Component: Base
  ============================================================================ */
@@ -9187,9 +9187,8 @@ TODO:
   right: 20px;
 }
 .am-modal-bd {
-  padding: 15px 10px;
+  padding: 30px 10px;
   text-align: center;
-  border-bottom: 1px solid #ebebeb;
   border-radius: 2px 2px 0 0;
 }
 .am-modal-bd + .am-modal-bd {

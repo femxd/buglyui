@@ -161,7 +161,7 @@ var Modal = React.createClass({
     ) : null;
 
     return (this.props.title || closeIcon) ? (
-      <div className={this.prefixClass('hd') + ' border-bottom'}>
+      <div className={this.prefixClass('hd') }>
         {title ? (
           <h4
             className={this.setClassNamespace('margin-bottom-sm') + ' modal-header'}

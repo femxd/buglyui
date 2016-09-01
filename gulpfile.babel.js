@@ -241,7 +241,7 @@ gulp.task('dev', () => {
           publicPath: docsConfig.output.publicPath,
 
           // pretty colored output
-          stats: { colors: true }
+          stats: 'normal'
 
           // for other settings see
           // http://webpack.github.io/docs/webpack-dev-middleware.html
