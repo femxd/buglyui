@@ -56,7 +56,9 @@ var ModalTrigger = React.createClass({
     }
   },
 
-  toggle: function() {
+  toggle: function(event) {
+    event.stopPropagation()
+    
     if (this.state.isModalActive) {
       this.close();
     } else {

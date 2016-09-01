@@ -7,7 +7,7 @@ var ClassNameMixin = require('./mixins/ClassNameMixin');
 var Dropdown = require('./Dropdown');
 var Icon = require('./Icon');
 var Input = require('./Input');
-
+var cloneDeep = require('lodash/cloneDeep');
 var Selected = React.createClass({
   mixins: [ClassNameMixin],
 
@@ -31,20 +31,20 @@ var Selected = React.createClass({
     delimiter: React.PropTypes.string
   },
 
-  getDefaultProps: function() {
+  getDefaultProps: function () {
     return {
       classPrefix: 'selected',
       placeholder: '点击选择...',
-      onChange: function() {},
+      onChange: function () { },
       value: '',
       delimiter: ',',
-      optionFilter: function(filterText, option) {
+      optionFilter: function (filterText, option) {
         return (option.label.toLowerCase().indexOf(filterText) > -1);
       }
     };
   },
 
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       value: this.props.value,
       dropdownWidth: null,
@@ -52,43 +52,43 @@ var Selected = React.createClass({
     };
   },
 
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.setDropdownWidth();
   },
 
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps: function (nextProps) {
     this.setState({
       value: nextProps.value
     });
   },
 
-  setDropdownWidth: function() {
+  setDropdownWidth: function () {
     if (this.isMounted()) {
       var toggleButton = ReactDOM.findDOMNode(this.refs.dropdown.
         refs.dropdownToggle);
 
-      toggleButton && this.setState({dropdownWidth: toggleButton.offsetWidth});
+      toggleButton && this.setState({ dropdownWidth: toggleButton.offsetWidth });
     }
   },
 
-  getValueArray: function() {
+  getValueArray: function () {
     return this.state.value ? this.state.value.split(this.props.delimiter) : [];
   },
 
-  hasValue: function(value) {
+  hasValue: function (value) {
     return this.getValueArray().indexOf(value) > -1;
   },
 
-  setValue: function(value, callback) {
+  setValue: function (value, callback) {
     this.setState({
       value: value
-    }, function() {
+    }, function () {
       this.props.onChange(value);
       callback && callback();
     });
   },
 
-  handleCheck: function(option, e) {
+  handleCheck: function (option, e) {
     e.preventDefault();
 
     var clickedValue = option.value;
@@ -110,7 +110,7 @@ var Selected = React.createClass({
     }
   },
 
-  handleUserInput: function(e) {
+  handleUserInput: function (e) {
     e.preventDefault();
 
     this.setState({
@@ -119,7 +119,7 @@ var Selected = React.createClass({
   },
 
   // clear filter
-  clearFilterInput: function() {
+  clearFilterInput: function () {
     if (this.props.multiple && this.props.searchBox) {
       this.setState({
         filterText: null
@@ -129,18 +129,60 @@ var Selected = React.createClass({
   },
 
   // API for getting component value
-  getValue: function() {
+  getValue: function () {
     return this.state.value;
   },
 
-  render: function() {
+  showSelectedFirst(value, data) {
+    
+    let that = this;
+    // console.log('this.props.data.length', this.props.data.length);
+
+    if (Object.prototype.toString.call(data) != '[object Array]' || data.length == 0) {
+      return [];
+    }
+
+    var arr = value && value.split(',') || [],
+      temp = [];
+
+    arr.forEach(_value => {
+      //从data中找到_value, 并弹出
+      let index = that.findIndex(data, _value);
+      if (index == -1) {
+        return;
+      }
+      temp = temp.concat(data.splice(index, 1))
+    });
+
+    return temp.concat(data);
+  },
+
+  findIndex(data, value) {
+    // var value = '4.0.0.195(4.0.0.195)';
+    for(var i = 0, l = data.length; i < l; i++) {
+      if(data[i].value == value) {
+        return i;
+      }
+    }
+    return -1;
+  },
+
+  render: function () {
     var classSet = this.getClassSet();
     var selectedLabel = [];
     var items = [];
     var filterText = this.state.filterText;
     var groupHeader;
 
-    this.props.data.forEach(function(option, i) {
+
+    //处理this.props.data, 把选中的值放到数组前面来
+    // var _data = this.props.showSelectedFirst 
+    //   ? this.props.showSelectedFirst(this.state.value, this.props.data)
+    //   : this.props.data;
+
+    var _data = this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data))
+    
+    _data.forEach(function (option, i) {
       var checked = this.hasValue(option.value);
       var checkedClass = checked ? this.setClassNamespace('checked') : null;
       var checkedIcon = checked ? <Icon icon="check"/> : null;
@@ -152,9 +194,9 @@ var Selected = React.createClass({
         groupHeader = option.group;
         items.push(
           <li
-            className={this.prefixClass('list-header')}
+            className={this.prefixClass('list-header') }
             key={'header' + i}
-          >
+            >
             {groupHeader}
           </li>
         );
@@ -167,10 +209,10 @@ var Selected = React.createClass({
       items.push(
         <li
           className={checkedClass}
-          onClick={this.handleCheck.bind(this, option)}
+          onClick={this.handleCheck.bind(this, option) }
           key={i}
-        >
-          <span className={this.prefixClass('text')}>
+          >
+          <span className={this.prefixClass('text') }>
             {option.label}
           </span>
           {checkedIcon}
@@ -181,13 +223,13 @@ var Selected = React.createClass({
     var status = (
       <span
         className={classNames(this.prefixClass('status'),
-          this.setClassNamespace('fl'))}
-      >
+          this.setClassNamespace('fl')) }
+        >
         {selectedLabel.length ? selectedLabel.join(', ') : (
-          <span className={this.prefixClass('placeholder ')}>
+          <span className={this.prefixClass('placeholder ') }>
             {this.props.placeholder}
           </span>
-        )}
+        ) }
       </span>
     );
     var optionsStyle = {};
@@ -203,35 +245,35 @@ var Selected = React.createClass({
 
     return (
       <Dropdown
-        className={classNames(this.props.className, classSet)}
+        className={classNames(this.props.className, classSet) }
         title={status}
         onClose={this.clearFilterInput}
         btnStyle={this.props.btnStyle}
         btnSize={this.props.btnSize}
-        btnInlineStyle={{width: this.props.btnWidth}}
-        contentInlineStyle={{minWidth: this.state.dropdownWidth}}
-        toggleClassName={this.prefixClass('btn')}
-        caretClassName={this.prefixClass('icon')}
-        contentClassName={this.prefixClass('content')}
+        btnInlineStyle={{ width: this.props.btnWidth }}
+        contentInlineStyle={{ minWidth: this.state.dropdownWidth }}
+        toggleClassName={this.prefixClass('btn') }
+        caretClassName={this.prefixClass('icon') }
+        contentClassName={this.prefixClass('content') }
         contentTag="div"
         dropup={this.props.dropup}
         ref="dropdown"
-      >
+        >
         {searchTip}
         {this.props.searchBox ? (
-          <div className={this.prefixClass('search')}>
+          <div className={this.prefixClass('search') }>
             <i className="icon-search"></i>
             <Input
               onChange={this.handleUserInput}
               autoComplete="off"
               standalone
               ref="filterInput"
-            />
+              />
           </div>) : null}
         <ul
           style={optionsStyle}
-          className={this.prefixClass('list')}
-        >
+          className={this.prefixClass('list') }
+          >
           {items}
         </ul>
         <input
@@ -239,7 +281,7 @@ var Selected = React.createClass({
           type="hidden"
           ref="selectedField"
           value={this.state.value}
-        />
+          />
       </Dropdown>
     );
   }

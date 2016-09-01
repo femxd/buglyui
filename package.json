@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "start": "NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp build",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/gulp build --gulpfile ./gulpfile.babel.js",
     "docs": "rm -rf www && cross-env NODE_ENV=production gulp build:docs && browser-sync start -s www",
     "examples": "node ./examples/server.js",
     "changelog": "github-changes -o amazeui -r amazeui-react -a"
