@@ -1,4 +1,4 @@
-/*! BuglyUI v1.2.1 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-09-01T16:28:54+0800 */
+/*! BuglyUI v1.2.1 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T10:19:08+0800 */
 /* ==========================================================================
    Component: Base
  ============================================================================ */
@@ -4774,7 +4774,7 @@ a.am-close:hover {
 @font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -10685,9 +10685,6 @@ label.am-radio {
 /* ==========================================================================
    Component: Selected Plugin
  ============================================================================ */
-.am-selected {
-  width: 200px;
-}
 .am-selected-btn {
   width: 100%;
   padding-left: 10px;
@@ -10721,6 +10718,7 @@ label.am-radio {
 .am-selected-search {
   padding: 0 10px 10px;
   position: relative;
+  margin-top: 4px!important;
 }
 .am-selected-search .am-form-field {
   padding: .5em .5em .5em 32px;
@@ -10729,8 +10727,8 @@ label.am-radio {
 .am-selected-search .icon-search {
   position: absolute;
   left: 20px;
-  top: 10px;
-  color: #888;
+  top: 8px;
+  color: #e0e0e0;
 }
 .am-selected-list {
   margin: 0;
