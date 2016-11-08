@@ -1,4 +1,4 @@
-/*! buglyui v1.2.4 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T12:33:14+0800 */
+/*! buglyui v1.2.5 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T12:36:06+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.4',
+	  VERSION: '1.2.5',
 
 	  // layout
 	  Grid: __webpack_require__(2),

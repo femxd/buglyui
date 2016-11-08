@@ -1,7 +1,7 @@
 {
   "name": "@tencent/buglyui",
   "title": "buglyui",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "description": "Buglyui components build with React.",
   "main": "lib/index.js",
   "scripts": {
