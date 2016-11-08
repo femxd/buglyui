@@ -5246,7 +5246,7 @@ rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-react-dom@^0.14.8:
+react-dom@0.14.8:
   version "0.14.8"
   resolved "http://r.tnpm.oa.com/react-dom/download/react-dom-0.14.8.tgz#0f1c547514263f771bd31814a739e5306575069e"
 
@@ -5271,7 +5271,7 @@ react-router@^2.5.2:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
-react@^0.14.8:
+react@0.14.8:
   version "0.14.8"
   resolved "http://r.tnpm.oa.com/react/download/react-0.14.8.tgz#078dfa454d4745bcc54a9726311c2bf272c23684"
   dependencies:
@@ -6218,7 +6218,11 @@ typedarray@~0.0.5:
   version "0.0.6"
   resolved "http://r.tnpm.oa.com/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-ua-parser-js@^0.7.9, ua-parser-js@0.7.10:
+ua-parser-js@^0.7.9:
+  version "0.7.11"
+  resolved "http://r.tnpm.oa.com/ua-parser-js/download/ua-parser-js-0.7.11.tgz#3741e2dd2fb09251a960f9ef076cd0cc72eaf6a0"
+
+ua-parser-js@0.7.10:
   version "0.7.10"
   resolved "http://r.tnpm.oa.com/ua-parser-js/download/ua-parser-js-0.7.10.tgz#917559ddcce07cbc09ece7d80495e4c268f4ef9f"
 

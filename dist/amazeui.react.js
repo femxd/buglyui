@@ -1,4 +1,4 @@
-/*! buglyui v1.2.4 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-01T16:16:03+0800 */
+/*! buglyui v1.2.4 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T12:33:14+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -9393,6 +9393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    btnStyle: React.PropTypes.string,
 	    btnSize: React.PropTypes.string,
 	    maxHeight: React.PropTypes.number,
+	    sortSelected: React.PropTypes.bool,
 
 	    // delimiter to use to join multiple values
 	    delimiter: React.PropTypes.string
@@ -9400,6 +9401,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
+	      sortSelected: true,
 	      classPrefix: 'selected',
 	      placeholder: '点击选择...',
 	      onChange: function onChange() {},
@@ -9446,14 +9448,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  setValue: function setValue(value, callback) {
-	    var oldValue = this.state.value;
 	    this.setState({
 	      value: value
 	    }, function () {
-	      if (!this.props.onChange(value)) {
-	        // 限制选中个数时有用
-	        this.setState({ value: oldValue });
-	      };
+	      this.props.onChange(value);
 	      callback && callback();
 	    });
 	  },
@@ -9506,7 +9504,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  showSelectedFirst: function showSelectedFirst(value, data) {
 
 	    var that = this;
-	    // console.log('this.props.data.length', this.props.data.length);
 
 	    if (Object.prototype.toString.call(data) != '[object Array]' || data.length == 0) {
 	      return [];
@@ -9549,7 +9546,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //   ? this.props.showSelectedFirst(this.state.value, this.props.data)
 	    //   : this.props.data;
 
-	    var _data = this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data));
+	    var _data = this.props.sortSelected ? this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data)) : this.props.data;
 
 	    _data.forEach(function (option, i) {
 	      var checked = this.hasValue(option.value);

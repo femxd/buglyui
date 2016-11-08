@@ -26,6 +26,7 @@ var Selected = React.createClass({
     btnStyle: React.PropTypes.string,
     btnSize: React.PropTypes.string,
     maxHeight: React.PropTypes.number,
+    sortSelected: React.PropTypes.bool,
 
     // delimiter to use to join multiple values
     delimiter: React.PropTypes.string
@@ -33,6 +34,7 @@ var Selected = React.createClass({
 
   getDefaultProps: function () {
     return {
+      sortSelected: true,
       classPrefix: 'selected',
       placeholder: '点击选择...',
       onChange: function () { },
@@ -80,13 +82,10 @@ var Selected = React.createClass({
   },
 
   setValue: function (value, callback) {
-    var oldValue = this.state.value;
     this.setState({
       value: value
     }, function () {
-      if (!this.props.onChange(value)) { // 限制选中个数时有用
-        this.setState({ value: oldValue });
-      };
+      this.props.onChange(value);
       callback && callback();
     });
   },
@@ -139,7 +138,6 @@ var Selected = React.createClass({
   showSelectedFirst(value, data) {
 
     let that = this;
-    // console.log('this.props.data.length', this.props.data.length);
 
     if (Object.prototype.toString.call(data) != '[object Array]' || data.length == 0) {
       return [];
@@ -162,8 +160,8 @@ var Selected = React.createClass({
 
   findIndex(data, value) {
     // var value = '4.0.0.195(4.0.0.195)';
-    for(var i = 0, l = data.length; i < l; i++) {
-      if(data[i].value == value) {
+    for (var i = 0, l = data.length; i < l; i++) {
+      if (data[i].value == value) {
         return i;
       }
     }
@@ -183,12 +181,13 @@ var Selected = React.createClass({
     //   ? this.props.showSelectedFirst(this.state.value, this.props.data)
     //   : this.props.data;
 
-    var _data = this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data))
+    var _data = this.props.sortSelected ? this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data)) : this.props.data;
+
 
     _data.forEach(function (option, i) {
       var checked = this.hasValue(option.value);
       var checkedClass = checked ? this.setClassNamespace('checked') : null;
-      var checkedIcon = checked ? <Icon icon="check"/> : null;
+      var checkedIcon = checked ? <Icon icon="check" /> : null;
 
       checked && selectedLabel.push(option.label);
 
@@ -197,7 +196,7 @@ var Selected = React.createClass({
         groupHeader = option.group;
         items.push(
           <li
-            className={this.prefixClass('list-header') }
+            className={this.prefixClass('list-header')}
             key={'header' + i}
             >
             {groupHeader}
@@ -212,10 +211,10 @@ var Selected = React.createClass({
       items.push(
         <li
           className={checkedClass}
-          onClick={this.handleCheck.bind(this, option) }
+          onClick={this.handleCheck.bind(this, option)}
           key={i}
           >
-          <span className={this.prefixClass('text') }>
+          <span className={this.prefixClass('text')}>
             {option.label}
           </span>
           {checkedIcon}
@@ -226,13 +225,13 @@ var Selected = React.createClass({
     var status = (
       <span
         className={classNames(this.prefixClass('status'),
-          this.setClassNamespace('fl')) }
+          this.setClassNamespace('fl'))}
         >
         {selectedLabel.length ? selectedLabel.join(', ') : (
-          <span className={this.prefixClass('placeholder ') }>
+          <span className={this.prefixClass('placeholder ')}>
             {this.props.placeholder}
           </span>
-        ) }
+        )}
       </span>
     );
     var optionsStyle = {};
@@ -248,23 +247,23 @@ var Selected = React.createClass({
 
     return (
       <Dropdown
-        className={classNames(this.props.className, classSet) }
+        className={classNames(this.props.className, classSet)}
         title={status}
         onClose={this.clearFilterInput}
         btnStyle={this.props.btnStyle}
         btnSize={this.props.btnSize}
         btnInlineStyle={{ width: this.props.btnWidth }}
         contentInlineStyle={{ minWidth: this.state.dropdownWidth }}
-        toggleClassName={this.prefixClass('btn') }
-        caretClassName={this.prefixClass('icon') }
-        contentClassName={this.prefixClass('content') }
+        toggleClassName={this.prefixClass('btn')}
+        caretClassName={this.prefixClass('icon')}
+        contentClassName={this.prefixClass('content')}
         contentTag="div"
         dropup={this.props.dropup}
         ref="dropdown"
         >
         {searchTip}
         {this.props.searchBox ? (
-          <div className={this.prefixClass('search') }>
+          <div className={this.prefixClass('search')}>
             <i className="icon-search"></i>
             <Input
               onChange={this.handleUserInput}
@@ -275,7 +274,7 @@ var Selected = React.createClass({
           </div>) : null}
         <ul
           style={optionsStyle}
-          className={this.prefixClass('list') }
+          className={this.prefixClass('list')}
           >
           {items}
         </ul>

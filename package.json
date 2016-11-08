@@ -40,8 +40,8 @@
     "object.omit": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react": "0.14.8",
+    "react-dom": "0.14.8"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
