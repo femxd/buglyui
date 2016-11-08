@@ -1,4 +1,4 @@
-/*! BuglyUI v1.2.1 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T10:19:08+0800 */
+/*! buglyui v1.2.5 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T10:25:52+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.1',
+	  VERSION: '1.2.5',
 
 	  // layout
 	  Grid: __webpack_require__(2),
@@ -9433,10 +9433,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  setValue: function setValue(value, callback) {
+	    var oldValue = this.state.value;
 	    this.setState({
 	      value: value
 	    }, function () {
-	      this.props.onChange(value);
+	      if (!this.props.onChange(value)) {
+	        // 限制选中个数时有用
+	        this.setState({ value: oldValue });
+	      };
 	      callback && callback();
 	    });
 	  },
@@ -9528,7 +9532,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var groupHeader;
 
 	    //处理this.props.data, 把选中的值放到数组前面来
-	    // var _data = this.props.showSelectedFirst 
+	    // var _data = this.props.showSelectedFirst
 	    //   ? this.props.showSelectedFirst(this.state.value, this.props.data)
 	    //   : this.props.data;
 

@@ -80,10 +80,13 @@ var Selected = React.createClass({
   },
 
   setValue: function (value, callback) {
+    var oldValue = this.state.value;
     this.setState({
       value: value
     }, function () {
-      this.props.onChange(value);
+      if (!this.props.onChange(value)) { // 限制选中个数时有用
+        this.setState({ value: oldValue });
+      };
       callback && callback();
     });
   },
@@ -134,7 +137,7 @@ var Selected = React.createClass({
   },
 
   showSelectedFirst(value, data) {
-    
+
     let that = this;
     // console.log('this.props.data.length', this.props.data.length);
 
@@ -176,12 +179,12 @@ var Selected = React.createClass({
 
 
     //处理this.props.data, 把选中的值放到数组前面来
-    // var _data = this.props.showSelectedFirst 
+    // var _data = this.props.showSelectedFirst
     //   ? this.props.showSelectedFirst(this.state.value, this.props.data)
     //   : this.props.data;
 
     var _data = this.showSelectedFirst(this.getValue(), cloneDeep(this.props.data))
-    
+
     _data.forEach(function (option, i) {
       var checked = this.hasValue(option.value);
       var checkedClass = checked ? this.setClassNamespace('checked') : null;
