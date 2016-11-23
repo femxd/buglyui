@@ -20,7 +20,7 @@ var Selected = React.createClass({
     searchBox: React.PropTypes.bool,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
-    optionFilter: React.PropTypes.func,
+    optionFilter: React.PropTypes.func, // (filterText, option) => {}
     dropup: React.PropTypes.bool,
     btnWidth: React.PropTypes.number,
     btnStyle: React.PropTypes.string,
@@ -40,8 +40,8 @@ var Selected = React.createClass({
       onChange: function () { },
       value: '',
       delimiter: ',',
-      optionFilter: function (filterText, option) {
-        return (option.label.toLowerCase().indexOf(filterText) > -1);
+      optionFilter: function optionFilter(filterText, option) {
+        return filterText ? option.label.toLowerCase().indexOf(filterText) > -1 : true;
       }
     };
   },
@@ -204,7 +204,7 @@ var Selected = React.createClass({
         );
       }
 
-      if (filterText && !this.props.optionFilter(filterText, option)) {
+      if (!this.props.optionFilter(filterText, option)) {
         return;
       }
 

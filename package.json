@@ -1,7 +1,7 @@
 {
   "name": "@tencent/buglyui",
   "title": "buglyui",
-  "version": "1.2.6",
+  "version": "1.2.8",
   "description": "Buglyui components build with React.",
   "main": "lib/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "react-amazeui",
     "web-components"
   ],
-  "author": "AllMobilize, Inc.",
+  "author": "allanyu@tencent.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/femxd/buglyui/issues"

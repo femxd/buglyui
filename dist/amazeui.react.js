@@ -1,4 +1,4 @@
-/*! buglyui v1.2.5 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-08T12:36:06+0800 */
+/*! buglyui v1.2.8 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-15T10:28:11+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.5',
+	  VERSION: '1.2.8',
 
 	  // layout
 	  Grid: __webpack_require__(2),
@@ -9387,7 +9387,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    searchBox: React.PropTypes.bool,
 	    name: React.PropTypes.string,
 	    onChange: React.PropTypes.func,
-	    optionFilter: React.PropTypes.func,
+	    optionFilter: React.PropTypes.func, // (filterText, option) => {}
 	    dropup: React.PropTypes.bool,
 	    btnWidth: React.PropTypes.number,
 	    btnStyle: React.PropTypes.string,
@@ -9408,7 +9408,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: '',
 	      delimiter: ',',
 	      optionFilter: function optionFilter(filterText, option) {
-	        return option.label.toLowerCase().indexOf(filterText) > -1;
+	        return filterText ? option.label.toLowerCase().indexOf(filterText) > -1 : true;
 	      }
 	    };
 	  },
@@ -9568,7 +9568,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        ));
 	      }
 
-	      if (filterText && !this.props.optionFilter(filterText, option)) {
+	      if (!this.props.optionFilter(filterText, option)) {
 	        return;
 	      }
 
