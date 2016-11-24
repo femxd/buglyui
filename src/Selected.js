@@ -27,6 +27,7 @@ var Selected = React.createClass({
     btnSize: React.PropTypes.string,
     maxHeight: React.PropTypes.number,
     sortSelected: React.PropTypes.bool,
+    onValidateValue: React.PropTypes.func, // 判断value是否有效
 
     // delimiter to use to join multiple values
     delimiter: React.PropTypes.string
@@ -38,6 +39,7 @@ var Selected = React.createClass({
       classPrefix: 'selected',
       placeholder: '点击选择...',
       onChange: function () { },
+      onValidateValue: function (value) { return true },
       value: '',
       delimiter: ',',
       optionFilter: function optionFilter(filterText, option) {
@@ -82,12 +84,14 @@ var Selected = React.createClass({
   },
 
   setValue: function (value, callback) {
-    this.setState({
-      value: value
-    }, function () {
-      this.props.onChange(value);
-      callback && callback();
-    });
+    if (this.props.onValidateValue(value)) {
+      this.setState({
+        value: value
+      }, function () {
+        this.props.onChange(value);
+        callback && callback();
+      });
+    }
   },
 
   handleCheck: function (option, e) {

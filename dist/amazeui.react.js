@@ -1,4 +1,4 @@
-/*! buglyui v1.2.8 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-15T10:28:11+0800 */
+/*! buglyui v1.2.8 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-24T15:12:33+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -9394,6 +9394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    btnSize: React.PropTypes.string,
 	    maxHeight: React.PropTypes.number,
 	    sortSelected: React.PropTypes.bool,
+	    onValidateValue: React.PropTypes.func, // 判断value是否有效
 
 	    // delimiter to use to join multiple values
 	    delimiter: React.PropTypes.string
@@ -9405,6 +9406,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      classPrefix: 'selected',
 	      placeholder: '点击选择...',
 	      onChange: function onChange() {},
+	      onValidateValue: function onValidateValue(value) {
+	        return true;
+	      },
 	      value: '',
 	      delimiter: ',',
 	      optionFilter: function optionFilter(filterText, option) {
@@ -9448,12 +9452,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  setValue: function setValue(value, callback) {
-	    this.setState({
-	      value: value
-	    }, function () {
-	      this.props.onChange(value);
-	      callback && callback();
-	    });
+	    if (this.props.onValidateValue(value)) {
+	      this.setState({
+	        value: value
+	      }, function () {
+	        this.props.onChange(value);
+	        callback && callback();
+	      });
+	    }
 	  },
 
 	  handleCheck: function handleCheck(option, e) {
