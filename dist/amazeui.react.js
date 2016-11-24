@@ -1,4 +1,4 @@
-/*! buglyui v1.2.8 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-23T19:52:59+0800 */
+/*! buglyui v1.2.9 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-24T18:09:15+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.8',
+	  VERSION: '1.2.9',
 
 	  // layout
 	  Grid: __webpack_require__(2),
@@ -9382,6 +9382,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    maxHeight: React.PropTypes.number,
 	    sortSelected: React.PropTypes.bool,
 	    limit: React.PropTypes.number,
+	    onValidateValue: React.PropTypes.func, // 判断value是否有效
 	    // delimiter to use to join multiple values
 	    delimiter: React.PropTypes.string
 	  },
@@ -9392,6 +9393,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      classPrefix: 'selected',
 	      placeholder: '点击选择...',
 	      onChange: function onChange() {},
+	      onValidateValue: function onValidateValue(value) {
+	        return true;
+	      },
 	      value: '',
 	      delimiter: ',',
 	      optionFilter: function optionFilter(filterText, option) {
@@ -9435,12 +9439,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  setValue: function setValue(value, callback) {
-	    this.setState({
-	      value: value
-	    }, function () {
-	      this.props.onChange(value);
-	      callback && callback();
-	    });
+	    if (this.props.onValidateValue(value)) {
+	      this.setState({
+	        value: value
+	      }, function () {
+	        this.props.onChange(value);
+	        callback && callback();
+	      });
+	    }
 	  },
 
 	  handleCheck: function handleCheck(option, e) {
