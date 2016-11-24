@@ -27,7 +27,7 @@ var Selected = React.createClass({
     btnSize: React.PropTypes.string,
     maxHeight: React.PropTypes.number,
     sortSelected: React.PropTypes.bool,
-
+    limit: React.PropTypes.number,
     // delimiter to use to join multiple values
     delimiter: React.PropTypes.string
   },
@@ -101,7 +101,7 @@ var Selected = React.createClass({
 
       if (this.hasValue(clickedValue)) {
         values.splice(values.indexOf(clickedValue), 1);
-      } else {
+      } else if (!this.props.limit || values.length < this.props.limit) {
         values.push(clickedValue);
       }
 
