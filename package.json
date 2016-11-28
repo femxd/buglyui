@@ -37,7 +37,10 @@
     "fecha": "^2.1.0",
     "jquery": "^2.2.3",
     "object-assign": "^4.1.0",
-    "object.omit": "^2.0.0"
+    "object.omit": "^2.0.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-infinite": "^0.10.0"
   },
   "peerDependencies": {
     "react": "0.14.8",
