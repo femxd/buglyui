@@ -67,9 +67,8 @@ var InfiniteSelected = React.createClass({
   },
 
   componentWillUpdate: function componentWillUpdate(nextProps, nextState) {
-    // console.log('componentWillUpdate', nextState.filterText, this.state.filterText);
     if (nextState.filterText !== this.state.filterText) {
-      this.setItems(0, this.state.data.length, this.state.data, nextState.filterText);
+      this.setItems(nextState.data, nextState.filterText);
     }
   },
 
@@ -78,25 +77,28 @@ var InfiniteSelected = React.createClass({
     this.setState({
       value: nextProps.value,
       data: sortedData,
-      selectedLabel: this.getSelectedLabel(nextProps.value, sortedData)
+      selectedLabel: this.getSelectedLabel(nextProps.value, sortedData),
+      lastSearchTime: new Date().getTime(),
     });
-    this.setItems(0, this.state.loadNum, sortedData);
+    this.setItems(sortedData, this.state.filterText);
   },
 
-  setItems: function (start, end, data) {
-    if (!data || !data.length || data.length <= 0) {
-      return {};
-    }
-    var itemsAndSelectedLabel = this.buildElements(data, start, end);
+  setItems: function (sortedData, filterText) {
+    var filterData = filterText ? this.getFilterData(filterText) : sortedData;
+
+    var items = this.buildElements(filterData, 0, this.state.loadNum);
     this.setState({
-      items: itemsAndSelectedLabel.items,
+      items: items,
+      itemsLength: items.length,
+      filterData: filterData,
+      filterText: filterText
     });
   },
 
-  buildElements: function (data, start, end, filterText) {
+  buildElements: function (data, start, end) {
     var groupHeader;
     var items = [];
-
+    var temp = new Date().getTime();
     data.slice(start, end).forEach(function (option, i) {
       var checked = this.hasValue(option.value);
       var checkedClass = checked ? this.setClassNamespace('checked') : null;
@@ -108,22 +110,18 @@ var InfiniteSelected = React.createClass({
         items.push(
           <li
             className={this.prefixClass('list-header')}
-            key={'header' + i}
+            key={'header' + i + temp}
             >
             {groupHeader}
           </li>
         );
       }
 
-      if (!this.props.optionFilter(filterText, option)) {
-        return;
-      }
-
       items.push(
         <li
           className={checkedClass}
           onClick={this.handleCheck.bind(this, option)}
-          key={i + new Date().getTime()}
+          key={i + temp}
           >
           <span className={this.prefixClass('text')}>
             {option.label}
@@ -133,10 +131,7 @@ var InfiniteSelected = React.createClass({
       );
     }.bind(this));
 
-    return {
-      items: items,
-      selectedLabel: selectedLabel
-    };
+    return items;
   },
 
   handleInfiniteLoad: function () {
@@ -145,7 +140,7 @@ var InfiniteSelected = React.createClass({
       isInfiniteLoading: true
     });
     setTimeout(function () {
-      var elemLength = that.state.items.length;
+      var elemLength = that.state.itemsLength;
       var dataLength = that.state.data.length;
 
       if (elemLength >= dataLength) {
@@ -154,10 +149,11 @@ var InfiniteSelected = React.createClass({
         });
         return false;
       }
-      var newElements = that.buildElements(that.state.data, elemLength, (elemLength + that.state.loadNum) >= dataLength ? dataLength : elemLength + that.state.loadNum).items;
+      var newElements = that.buildElements(that.state.filterData, elemLength, elemLength + that.state.loadNum >= dataLength ? dataLength : elemLength + that.state.loadNum);
       that.setState({
         isInfiniteLoading: false,
-        items: that.state.items.concat(newElements)
+        items: that.state.items.concat(newElements),
+        itemsLength: newElements.length + elemLength
       });
     }, 2500);
   },
@@ -166,6 +162,36 @@ var InfiniteSelected = React.createClass({
     return <li className="infinite-list-item">
       Loading...
     </li>;
+  },
+
+  getSelectedLabel: function (value, data) {
+    if (!data || data.length <= 0) {
+      return [];
+    }
+    var label = [];
+    var valueArr = value ? value.split(this.props.delimiter) : [];
+    data.forEach(function (option, i) {
+      if (valueArr.indexOf(option.value) > -1) {
+        label.push(option.label);
+      } else {
+        return;
+      }
+    })
+    return label;
+  },
+
+  getFilterData: function (filterText) {
+    if (!filterText) {
+      return [];
+    }
+    var data = [];
+    var that = this;
+    this.state.data.forEach(function (option, i) {
+      if (that.props.optionFilter(filterText, option)) {
+        data.push(option);
+      }
+    })
+    return data;
   },
 
   setDropdownWidth: function () {
@@ -220,10 +246,35 @@ var InfiniteSelected = React.createClass({
 
   handleUserInput: function (e) {
     e.preventDefault();
+    var now = new Date().getTime();
+    var change = { lastSearchTime: now };
 
-    this.setState({
-      filterText: ReactDOM.findDOMNode(this.refs.filterInput).value
-    });
+    if (now - this.state.lastSearchTime > 300) {
+      change = Object.assign(change,
+        {
+          filterText: ReactDOM.findDOMNode(this.refs.filterInput).value,
+          timeout: this.getTimeout(this.handleTimeout)
+        })
+    }
+    this.setState(change);
+  },
+
+  getTimeout: function (callback) {
+    if (this.state.timeout) {
+      clearTimeout(this.state.timeout);
+    }
+    return setTimeout(callback, 300);
+  },
+
+  handleTimeout: function () {
+    //clear timeout and check filterText
+    if (this.state.timeout) {
+      clearTimeout(this.state.timeout);
+    }
+    var _filterText = ReactDOM.findDOMNode(this.refs.filterInput).value;
+    if (_filterText !== this.state.filterText) {
+      this.setItems(this.state.data, _filterText);
+    }
   },
 
   // clear filter
