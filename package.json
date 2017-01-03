@@ -1,7 +1,7 @@
 {
   "name": "@tencent/buglyui",
   "title": "buglyui",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "Buglyui components build with React.",
   "main": "lib/index.js",
   "scripts": {
@@ -36,6 +36,7 @@
     "classnames": "^2.2.5",
     "fecha": "^2.1.0",
     "jquery": "^2.2.3",
+    "lodash.clonedeep": "^4.5.0",
     "object-assign": "^4.1.0",
     "object.omit": "^2.0.0"
   },

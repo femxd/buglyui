@@ -7,7 +7,7 @@ var ClassNameMixin = require('./mixins/ClassNameMixin');
 var Dropdown = require('./Dropdown');
 var Icon = require('./Icon');
 var Input = require('./Input');
-var cloneDeep = require('lodash/cloneDeep');
+var cloneDeep = require('lodash.clonedeep');
 var Selected = React.createClass({
   mixins: [ClassNameMixin],
 
