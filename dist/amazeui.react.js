@@ -1,4 +1,4 @@
-/*! buglyui v1.2.9 | by Amaze UI Team | (c) 2017 AllMobilize, Inc. | Licensed under MIT | 2017-01-03T10:35:04+0800 */
+/*! buglyui v1.2.10 | by Amaze UI Team | (c) 2017 AllMobilize, Inc. | Licensed under MIT | 2017-01-03T10:44:17+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.9',
+	  VERSION: '1.2.10',
 
 	  // layout
 	  Grid: __webpack_require__(2),
@@ -9394,8 +9394,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    btnSize: React.PropTypes.string,
 	    maxHeight: React.PropTypes.number,
 	    sortSelected: React.PropTypes.bool,
+	    limit: React.PropTypes.number,
 	    onValidateValue: React.PropTypes.func, // 判断value是否有效
-
 	    // delimiter to use to join multiple values
 	    delimiter: React.PropTypes.string
 	  },
@@ -9473,7 +9473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      if (this.hasValue(clickedValue)) {
 	        values.splice(values.indexOf(clickedValue), 1);
-	      } else {
+	      } else if (!this.props.limit || values.length < this.props.limit) {
 	        values.push(clickedValue);
 	      }
 
