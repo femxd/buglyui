@@ -122,6 +122,7 @@ var InfiniteSelected = React.createClass({
           className={checkedClass}
           onClick={this.handleCheck.bind(this, option)}
           key={i + temp}
+          title={option.label}
           >
           <span className={this.prefixClass('text')}>
             {option.label}
@@ -377,23 +378,18 @@ var InfiniteSelected = React.createClass({
               ref="filterInput"
               />
           </div>) : null}
-
-        <Infinite
-          elementHeight={36}
-          containerHeight={200}
-          infiniteLoadBeginEdgeOffset={200}
-          onInfiniteLoad={this.handleInfiniteLoad}
-          loadingSpinnerDelegate={this.elementInfiniteLoad()}
-          isInfiniteLoading={this.state.isInfiniteLoading}
-          >
-          <ul
-            // style={optionsStyle}
-            className={this.prefixClass('list')}
+        <ul className="am-selected-list">
+          <Infinite
+            elementHeight={36}
+            containerHeight={200}
+            loadingSpinnerDelegate={this.elementInfiniteLoad()}
+            isInfiniteLoading={this.state.isInfiniteLoading}
+            infiniteLoadBeginEdgeOffset={200}
+            onInfiniteLoad={this.handleInfiniteLoad}
             >
             {this.state.items}
-          </ul>
-        </Infinite>;
-
+          </Infinite>
+        </ul>
         <input
           name={this.props.name}
           type="hidden"

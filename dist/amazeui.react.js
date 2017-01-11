@@ -1,4 +1,4 @@
-/*! buglyui v1.2.12 | by Amaze UI Team | (c) 2016 AllMobilize, Inc. | Licensed under MIT | 2016-11-29T13:13:02+0800 */
+/*! buglyui v1.2.13 | by Amaze UI Team | (c) 2017 AllMobilize, Inc. | Licensed under MIT | 2017-01-11T20:26:50+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
-	  VERSION: '1.2.12',
+	  VERSION: '1.2.13',
 
 	  // layout
 	  Grid: __webpack_require__(2),
@@ -12866,7 +12866,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        {
 	          className: checkedClass,
 	          onClick: this.handleCheck.bind(this, option),
-	          key: i + temp
+	          key: i + temp,
+	          title: option.label
 	        },
 	        React.createElement(
 	          'span',
@@ -13125,25 +13126,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	        })
 	      ) : null,
 	      React.createElement(
-	        Infinite,
-	        {
-	          elementHeight: 36,
-	          containerHeight: 200,
-	          infiniteLoadBeginEdgeOffset: 200,
-	          onInfiniteLoad: this.handleInfiniteLoad,
-	          loadingSpinnerDelegate: this.elementInfiniteLoad(),
-	          isInfiniteLoading: this.state.isInfiniteLoading
-	        },
+	        'ul',
+	        { className: 'am-selected-list' },
 	        React.createElement(
-	          'ul',
+	          Infinite,
 	          {
-	            // style={optionsStyle}
-	            className: this.prefixClass('list')
+	            elementHeight: 36,
+	            containerHeight: 200,
+	            loadingSpinnerDelegate: this.elementInfiniteLoad(),
+	            isInfiniteLoading: this.state.isInfiniteLoading,
+	            infiniteLoadBeginEdgeOffset: 200,
+	            onInfiniteLoad: this.handleInfiniteLoad
 	          },
 	          this.state.items
 	        )
 	      ),
-	      ';',
 	      React.createElement('input', {
 	        name: this.props.name,
 	        type: 'hidden',
