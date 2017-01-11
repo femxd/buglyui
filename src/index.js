@@ -67,6 +67,7 @@ module.exports = {
   ScrollSpy: require('./ScrollSpy'),
   ScrollSpyNav: require('./ScrollSpyNav'),
   Selected: require('./Selected'),
+  InfiniteSelected: require('./InfiniteSelected'),
   Slider: require('./Slider'),
   Sticky: require('./Sticky'),
 

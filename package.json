@@ -1,7 +1,7 @@
 {
   "name": "@tencent/buglyui",
   "title": "buglyui",
-  "version": "1.2.10",
+  "version": "1.2.14",
   "description": "Buglyui components build with React.",
   "main": "lib/index.js",
   "scripts": {
@@ -38,7 +38,8 @@
     "jquery": "^2.2.3",
     "lodash.clonedeep": "^4.5.0",
     "object-assign": "^4.1.0",
-    "object.omit": "^2.0.0"
+    "object.omit": "^2.0.0",
+    "react-infinite": "^0.10.0"
   },
   "peerDependencies": {
     "react": "0.14.8",
