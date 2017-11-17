@@ -1,4 +1,4 @@
-var LinkTooltip = React.createClass({
+var LinkTooltip = createReactClass({
   render: function() {
     var tooltip = <Popover amSize="sm">{this.props.tooltip}</Popover>;
 

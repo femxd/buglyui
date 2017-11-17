@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -14,7 +15,7 @@ var examples = {
   dataSelect: require('fs').readFileSync(__dirname + '/05-data-select.js', 'utf-8')
 };
 
-var PaginationDoc = React.createClass({
+var PaginationDoc = createReactClass({
   render: function() {
     return (
       <Doc>

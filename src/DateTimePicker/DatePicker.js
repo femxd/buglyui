@@ -1,26 +1,28 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var fecha = require('fecha');
 var ClassNameMixin = require('../mixins/ClassNameMixin');
 var dateUtils = require('../utils/dateUtils');
 
-var DatePicker = React.createClass({
+var DatePicker = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    onSelect: React.PropTypes.func.isRequired,
-    onClose: React.PropTypes.func,
-    viewMode: React.PropTypes.string,
-    minViewMode: React.PropTypes.string,
-    daysOfWeekDisabled: React.PropTypes.array,
-    format: React.PropTypes.string,
-    date: React.PropTypes.object,
-    weekStart: React.PropTypes.number,
-    minDate: React.PropTypes.string,
-    maxDate: React.PropTypes.string,
-    locale: React.PropTypes.string
+    onSelect: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
+    viewMode: PropTypes.string,
+    minViewMode: PropTypes.string,
+    daysOfWeekDisabled: PropTypes.array,
+    format: PropTypes.string,
+    date: PropTypes.object,
+    weekStart: PropTypes.number,
+    minDate: PropTypes.string,
+    maxDate: PropTypes.string,
+    locale: PropTypes.string
   },
 
   getDefaultProps: function() {
@@ -299,24 +301,24 @@ var DatePicker = React.createClass({
   }
 });
 
-var DaysPicker = React.createClass({
+var DaysPicker = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    subtractMonth: React.PropTypes.func.isRequired,
-    addMonth: React.PropTypes.func.isRequired,
+    subtractMonth: PropTypes.func.isRequired,
+    addMonth: PropTypes.func.isRequired,
 
-    setSelectedDate: React.PropTypes.func.isRequired,
-    selectedDate: React.PropTypes.object.isRequired,
+    setSelectedDate: PropTypes.func.isRequired,
+    selectedDate: PropTypes.object.isRequired,
 
-    viewDate: React.PropTypes.object.isRequired,
-    showMonths: React.PropTypes.func.isRequired,
+    viewDate: PropTypes.object.isRequired,
+    showMonths: PropTypes.func.isRequired,
 
-    locale: React.PropTypes.object,
-    weekStart: React.PropTypes.number,
-    daysOfWeekDisabled: React.PropTypes.array,
-    minDate: React.PropTypes.string,
-    maxDate: React.PropTypes.string
+    locale: PropTypes.object,
+    weekStart: PropTypes.number,
+    daysOfWeekDisabled: PropTypes.array,
+    minDate: PropTypes.string,
+    maxDate: PropTypes.string
   },
 
   getDefaultProps: function() {
@@ -482,19 +484,19 @@ var DaysPicker = React.createClass({
   }
 });
 
-var MonthsPicker = React.createClass({
+var MonthsPicker = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    locale: React.PropTypes.object,
-    subtractYear: React.PropTypes.func.isRequired,
-    addYear: React.PropTypes.func.isRequired,
-    viewDate: React.PropTypes.object.isRequired,
-    selectedDate: React.PropTypes.object.isRequired,
-    showYears: React.PropTypes.func.isRequired,
-    setViewMonth: React.PropTypes.func.isRequired,
-    minDate: React.PropTypes.string,
-    maxDate: React.PropTypes.string
+    locale: PropTypes.object,
+    subtractYear: PropTypes.func.isRequired,
+    addYear: PropTypes.func.isRequired,
+    viewDate: PropTypes.object.isRequired,
+    selectedDate: PropTypes.object.isRequired,
+    showYears: PropTypes.func.isRequired,
+    setViewMonth: PropTypes.func.isRequired,
+    minDate: PropTypes.string,
+    maxDate: PropTypes.string
   },
 
   getDefaultProps: function() {
@@ -559,15 +561,15 @@ var MonthsPicker = React.createClass({
   }
 });
 
-var YearsPicker = React.createClass({
+var YearsPicker = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    viewDate: React.PropTypes.object.isRequired,
-    selectDate: React.PropTypes.object.isRequired,
-    subtractDecade: React.PropTypes.func.isRequired,
-    addDecade: React.PropTypes.func.isRequired,
-    setViewYear: React.PropTypes.func.isRequired
+    viewDate: PropTypes.object.isRequired,
+    selectDate: PropTypes.object.isRequired,
+    subtractDecade: PropTypes.func.isRequired,
+    addDecade: PropTypes.func.isRequired,
+    setViewYear: PropTypes.func.isRequired
   },
 
   getDefaultProps: function() {
@@ -629,7 +631,7 @@ var YearsPicker = React.createClass({
   }
 });
 
-var SubPicker = React.createClass({
+var SubPicker = createReactClass({
   mixins: [ClassNameMixin],
 
   getDefaultProps: function() {

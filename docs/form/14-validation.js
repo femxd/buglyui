@@ -1,4 +1,4 @@
-var ValidationExample = React.createClass({
+var ValidationExample = createReactClass({
   getInitialState: function() {
     return {
       value: ''

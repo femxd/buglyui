@@ -1,9 +1,10 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Markdown = require('../utils').Markdown;
 
-var PageComponentsIndex = React.createClass({
+var PageComponentsIndex = createReactClass({
   render: function() {
     return (
       <Markdown doc>

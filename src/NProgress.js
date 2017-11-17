@@ -7,6 +7,8 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
 function clamp(n, min, max) {
@@ -25,17 +27,17 @@ function toBarPercentage(n) {
   return (-1 + n) * 100;
 }
 
-var NProgress = React.createClass({
+var NProgress = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    minimum: React.PropTypes.number,
-    easing: React.PropTypes.string,
-    speed: React.PropTypes.number,
-    spinner: React.PropTypes.bool,
-    trickle: React.PropTypes.bool,
-    trickleRate: React.PropTypes.number,
-    trickleSpeed: React.PropTypes.number
+    minimum: PropTypes.number,
+    easing: PropTypes.string,
+    speed: PropTypes.number,
+    spinner: PropTypes.bool,
+    trickle: PropTypes.bool,
+    trickleRate: PropTypes.number,
+    trickleSpeed: PropTypes.number
   },
 
   getInitialState: function() {

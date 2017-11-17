@@ -1,16 +1,18 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var AvgGrid = require('./AvgGrid');
 var omit = require('object.omit');
 
-var Thumbnails = React.createClass({
+var Thumbnails = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string
+    classPrefix: PropTypes.string
   },
 
   getDefaultProps: function() {

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -10,7 +11,7 @@ var examples = {
   content: require('fs').readFileSync(__dirname + '/03-content.js', 'utf-8')
 };
 
-var GridDoc = React.createClass({
+var GridDoc = createReactClass({
   render: function() {
     return (
       <Doc>

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -16,7 +17,7 @@ var examples = {
   d3: require('fs').readFileSync(__dirname + '/05-d3.js', 'utf-8')
 };
 
-var SliderDoc = React.createClass({
+var SliderDoc = createReactClass({
   render: function() {
     return (
       <Doc>

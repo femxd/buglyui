@@ -5,22 +5,24 @@
  */
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var Input = require('./Input');
 var Icon = require('./Icon');
 var constants = require('./constants');
 
-var UCheck = React.createClass({
+var UCheck = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    type: React.PropTypes.oneOf(['radio', 'checkbox']),
-    disabled: React.PropTypes.bool,
-    amStyle: React.PropTypes.oneOf(['secondary', 'success', 'warning',
+    type: PropTypes.oneOf(['radio', 'checkbox']),
+    disabled: PropTypes.bool,
+    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning',
       'danger']),
-    inline: React.PropTypes.bool,
-    hasFeedback: React.PropTypes.bool
+    inline: PropTypes.bool,
+    hasFeedback: PropTypes.bool
   },
 
   getDefaultProps: function() {

@@ -1,22 +1,24 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Footer = React.createClass({
+var Footer = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    theme: React.PropTypes.oneOf(['default']),
-    classPrefix: React.PropTypes.string,
-    mobileTitle: React.PropTypes.string,
-    mobileLink: React.PropTypes.string,
-    desktopTitle: React.PropTypes.string,
-    desktopLink: React.PropTypes.string,
-    onRequestMobile: React.PropTypes.func,
-    onRequestDesktop: React.PropTypes.func,
-    data: React.PropTypes.array
+    theme: PropTypes.oneOf(['default']),
+    classPrefix: PropTypes.string,
+    mobileTitle: PropTypes.string,
+    mobileLink: PropTypes.string,
+    desktopTitle: PropTypes.string,
+    desktopLink: PropTypes.string,
+    onRequestMobile: PropTypes.func,
+    onRequestDesktop: PropTypes.func,
+    data: PropTypes.array
   },
 
   getDefaultProps: function() {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+var createReactClass = require('create-react-class');
 import {
   Router,
   Route,
@@ -31,7 +32,7 @@ import {
 import DocHeader from './_pages/DocHeader';
 import DocFooter from './_pages/DocFooter';
 
-const App = React.createClass({
+const App = createReactClass({
   render: function() {
     return (
       <div className="amr-page">

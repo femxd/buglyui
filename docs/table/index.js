@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -12,7 +13,7 @@ var examples = {
   jsonTable: require('fs').readFileSync(__dirname + '/05-json-table.js', 'utf-8')
 };
 
-var TableDoc = React.createClass({
+var TableDoc = createReactClass({
   render: function() {
     return (
       <Doc>

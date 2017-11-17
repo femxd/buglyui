@@ -2,18 +2,20 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var CollapseMixin = require('./mixins/CollapseMixin');
 
-var Accordion = React.createClass({
+var Accordion = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    theme: React.PropTypes.oneOf(['default', 'basic', 'gapped']),
-    data: React.PropTypes.array,
-    activeKey: React.PropTypes.any,
-    defaultActiveKey: React.PropTypes.any
+    theme: PropTypes.oneOf(['default', 'basic', 'gapped']),
+    data: PropTypes.array,
+    activeKey: PropTypes.any,
+    defaultActiveKey: PropTypes.any
   },
 
   getDefaultProps: function() {
@@ -70,12 +72,12 @@ var Accordion = React.createClass({
   }
 });
 
-Accordion.Item = React.createClass({
+Accordion.Item = createReactClass({
   mixins: [ClassNameMixin, CollapseMixin],
 
   propTypes: {
-    title: React.PropTypes.node,
-    expanded: React.PropTypes.bool
+    title: PropTypes.node,
+    expanded: PropTypes.bool
   },
 
   handleToggle: function() {

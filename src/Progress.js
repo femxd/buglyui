@@ -1,19 +1,21 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Progress = React.createClass({
+var Progress = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    now: React.PropTypes.number,
-    label: React.PropTypes.string,
-    active: React.PropTypes.bool,
-    striped: React.PropTypes.bool,
-    amSize: React.PropTypes.string,
-    amStyle: React.PropTypes.string
+    now: PropTypes.number,
+    label: PropTypes.string,
+    active: PropTypes.bool,
+    striped: PropTypes.bool,
+    amSize: PropTypes.string,
+    amStyle: PropTypes.string
   },
 
   getDefaultProps: function() {

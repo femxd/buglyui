@@ -1,12 +1,13 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Container = require('../../src/Container');
 var Banner = require('./DocBanner');
 var Main = require('./DocMain');
 var Markdown = require('../utils').Markdown;
 
-var GettingStarted = React.createClass({
+var GettingStarted = createReactClass({
   render: function() {
     return (
       <Main>

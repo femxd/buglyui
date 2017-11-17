@@ -1,4 +1,4 @@
-var CloseableAlert = React.createClass({
+var CloseableAlert = createReactClass({
   getInitialState: function() {
     return {
       visible: true

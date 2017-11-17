@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var ReactDOM = require('react-dom');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
@@ -11,16 +13,16 @@ var dom = require('./utils/domUtils');
 var CSSCore = require('./utils/CSSCore');
 var Icon = require('./Icon');
 
-var GoTop = React.createClass({
+var GoTop = createReactClass({
   mixins: [ClassNameMixin, SmoothScrollMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    theme: React.PropTypes.oneOf(['default', 'fixed']),
-    title: React.PropTypes.string,
-    src: React.PropTypes.string,
-    icon: React.PropTypes.string,
-    autoHide: React.PropTypes.bool
+    classPrefix: PropTypes.string.isRequired,
+    theme: PropTypes.oneOf(['default', 'fixed']),
+    title: PropTypes.string,
+    src: PropTypes.string,
+    icon: PropTypes.string,
+    autoHide: PropTypes.bool
   },
 
   getDefaultProps: function() {

@@ -1,6 +1,6 @@
 // TODO: add spinner
 
-var LoadingButton = React.createClass({
+var LoadingButton = createReactClass({
   getInitialState: function() {
     return {
       isLoading: false
@@ -8,8 +8,8 @@ var LoadingButton = React.createClass({
   },
 
   propTypes: {
-    loadingText: React.PropTypes.string.isRequired,
-    clickHandler: React.PropTypes.func
+    loadingText: PropTypes.string.isRequired,
+    clickHandler: PropTypes.func
   },
 
   getDefaultProps: function() {

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Container = require('../../src/Container');
 var Button = require('../../src/Button');
 var Icon = require('../../src/Icon');
@@ -19,7 +20,7 @@ var links = [
   }
 ];
 
-var DocHeader = React.createClass({
+var DocHeader = createReactClass({
   getInitialState: function() {
     return {
       menuActive: false

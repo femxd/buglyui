@@ -1,4 +1,4 @@
-var MyActions = React.createClass({
+var MyActions = createReactClass({
   render: function() {
     return (
       <Modal {...this.props} type="actions">

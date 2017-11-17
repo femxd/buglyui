@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -19,7 +20,7 @@ var examples = {
   onClose: require('fs').readFileSync(__dirname + '/11-onClose.js', 'utf-8')
 };
 
-var DateTimePickerDoc = React.createClass({
+var DateTimePickerDoc = createReactClass({
   render: function() {
     return (
       <Doc>

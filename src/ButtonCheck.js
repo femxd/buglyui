@@ -1,16 +1,18 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var CSSCore = require('./utils/CSSCore');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var ButtonGroup = require('./ButtonGroup');
 var constants = require('./constants');
 
-var ButtonCheck = React.createClass({
+var ButtonCheck = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    clickHandler: React.PropTypes.func
+    clickHandler: PropTypes.func
   },
 
   getDefaultProps: function() {

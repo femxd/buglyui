@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var utils = require('../utils');
 var Markdown = utils.Markdown;
@@ -13,7 +14,7 @@ var examples = {
   size: require('fs').readFileSync(__dirname + '/04-size.js', 'utf-8')
 };
 
-var BadgeDoc = React.createClass({
+var BadgeDoc = createReactClass({
   render: function() {
     return (
       <Doc>

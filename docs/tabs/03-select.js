@@ -1,4 +1,4 @@
-var TabsSelect = React.createClass({
+var TabsSelect = createReactClass({
   getInitialState: function() {
     return {
       key: '1'

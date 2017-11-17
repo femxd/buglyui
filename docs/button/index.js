@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Button = require('../../src/Button');
 var ButtonToolbar = require('../../src/ButtonToolbar');
 var ReactBin = require('../ReactBin');
@@ -24,7 +25,7 @@ var examples = {
   checkButton: require('fs').readFileSync(__dirname + '/15-check-button.js', 'utf-8')
 };
 
-var ButtonDoc = React.createClass({
+var ButtonDoc = createReactClass({
   render: function() {
     return (
       <Doc>

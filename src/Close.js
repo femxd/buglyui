@@ -1,19 +1,21 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var Icon = require('./Icon');
 
-var Close = React.createClass({
+var Close = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    component: React.PropTypes.node,
-    spin: React.PropTypes.bool,
-    alt: React.PropTypes.bool,
-    icon: React.PropTypes.bool
+    classPrefix: PropTypes.string.isRequired,
+    component: PropTypes.node,
+    spin: PropTypes.bool,
+    alt: PropTypes.bool,
+    icon: PropTypes.bool
   },
 
   getDefaultProps: function() {

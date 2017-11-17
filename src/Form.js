@@ -1,16 +1,18 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Form = React.createClass({
+var Form = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    horizontal: React.PropTypes.bool,
-    inline: React.PropTypes.bool
+    classPrefix: PropTypes.string.isRequired,
+    horizontal: PropTypes.bool,
+    inline: PropTypes.bool
   },
 
   getDefaultProps: function() {

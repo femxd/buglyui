@@ -1,11 +1,13 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var Link = require('react-router').Link;
 
-var LinkItem = React.createClass({
+var LinkItem = createReactClass({
   contextTypes: {
-    router: React.PropTypes.object.isRequired
+    router: PropTypes.object.isRequired
   },
 
   render: function() {

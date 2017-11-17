@@ -1,4 +1,4 @@
-var ScrollTo = React.createClass({
+var ScrollTo = createReactClass({
   mixins: [SmoothScrollMixin],
 
   handleClick: function(e) {

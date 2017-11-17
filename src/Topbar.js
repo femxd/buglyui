@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var assign = require('object-assign');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
@@ -8,25 +10,25 @@ var createChainedFunction = require('./utils/createChainedFunction');
 var Icon = require('./Icon');
 var Button = require('./Button');
 
-var Topbar = React.createClass({
+var Topbar = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    component: React.PropTypes.node,
-    brand: React.PropTypes.node,
-    brandLink: React.PropTypes.string,
-    inverse: React.PropTypes.bool,
-    fixedTop: React.PropTypes.bool,
-    fixedBottom: React.PropTypes.bool,
-    toggleBtn: React.PropTypes.node,
-    toggleNavKey: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
+    component: PropTypes.node,
+    brand: PropTypes.node,
+    brandLink: PropTypes.string,
+    inverse: PropTypes.bool,
+    fixedTop: PropTypes.bool,
+    fixedBottom: PropTypes.bool,
+    toggleBtn: PropTypes.node,
+    toggleNavKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
     ]),
-    onToggle: React.PropTypes.func,
-    navExpanded: React.PropTypes.bool,
-    defaultNavExpanded: React.PropTypes.bool,
-    fluid: React.PropTypes.bool
+    onToggle: PropTypes.func,
+    navExpanded: PropTypes.bool,
+    defaultNavExpanded: PropTypes.bool,
+    fluid: PropTypes.bool
   },
 
   getDefaultProps: function() {

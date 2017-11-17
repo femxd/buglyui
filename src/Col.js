@@ -1,28 +1,30 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Col = React.createClass({
+var Col = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    sm: React.PropTypes.number,
-    md: React.PropTypes.number,
-    lg: React.PropTypes.number,
-    smOffset: React.PropTypes.number,
-    mdOffset: React.PropTypes.number,
-    lgOffset: React.PropTypes.number,
-    smPush: React.PropTypes.number,
-    mdPush: React.PropTypes.number,
-    lgPush: React.PropTypes.number,
-    smPull: React.PropTypes.number,
-    mdPull: React.PropTypes.number,
-    lgPull: React.PropTypes.number,
-    classPrefix: React.PropTypes.string.isRequired,
-    component: React.PropTypes.node.isRequired,
-    end: React.PropTypes.bool
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+    smOffset: PropTypes.number,
+    mdOffset: PropTypes.number,
+    lgOffset: PropTypes.number,
+    smPush: PropTypes.number,
+    mdPush: PropTypes.number,
+    lgPush: PropTypes.number,
+    smPull: PropTypes.number,
+    mdPull: PropTypes.number,
+    lgPull: PropTypes.number,
+    classPrefix: PropTypes.string.isRequired,
+    component: PropTypes.node.isRequired,
+    end: PropTypes.bool
   },
 
   getDefaultProps: function() {

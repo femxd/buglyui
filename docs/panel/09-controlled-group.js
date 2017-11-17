@@ -1,6 +1,6 @@
 // 一次只能展开一个面板
 
-var ControlledPanelGroup = React.createClass({
+var ControlledPanelGroup = createReactClass({
   getInitialState: function() {
     return {
       activeKey: 1

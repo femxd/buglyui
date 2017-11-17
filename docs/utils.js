@@ -1,11 +1,13 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classnames = require('classnames');
 
-exports.Markdown = React.createClass({
+exports.Markdown = createReactClass({
   propTypes: {
-    doc: React.PropTypes.bool
+    doc: PropTypes.bool
   },
 
   // TODO:
@@ -23,7 +25,7 @@ exports.Markdown = React.createClass({
   }
 });
 
-exports.Doc = React.createClass({
+exports.Doc = createReactClass({
   render: function() {
     return (
       <div

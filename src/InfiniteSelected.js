@@ -2,6 +2,8 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var Infinite = require('react-infinite');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
@@ -9,29 +11,29 @@ var Dropdown = require('./Dropdown');
 var Icon = require('./Icon');
 var Input = require('./Input');
 var cloneDeep = require('lodash/cloneDeep');
-var InfiniteSelected = React.createClass({
+var InfiniteSelected = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string,
-    data: React.PropTypes.array.isRequired,
-    placeholder: React.PropTypes.string,
-    value: React.PropTypes.string,
-    multiple: React.PropTypes.bool,
-    searchBox: React.PropTypes.bool,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    optionFilter: React.PropTypes.func, // (filterText, option) => {}
-    dropup: React.PropTypes.bool,
-    btnWidth: React.PropTypes.number,
-    btnStyle: React.PropTypes.string,
-    btnSize: React.PropTypes.string,
-    maxHeight: React.PropTypes.number,
-    sortSelected: React.PropTypes.bool,
-    limit: React.PropTypes.number,
-    onValidateValue: React.PropTypes.func, // 判断value是否有效
+    classPrefix: PropTypes.string,
+    data: PropTypes.array.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    multiple: PropTypes.bool,
+    searchBox: PropTypes.bool,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    optionFilter: PropTypes.func, // (filterText, option) => {}
+    dropup: PropTypes.bool,
+    btnWidth: PropTypes.number,
+    btnStyle: PropTypes.string,
+    btnSize: PropTypes.string,
+    maxHeight: PropTypes.number,
+    sortSelected: PropTypes.bool,
+    limit: PropTypes.number,
+    onValidateValue: PropTypes.func, // 判断value是否有效
     // delimiter to use to join multiple values
-    delimiter: React.PropTypes.string
+    delimiter: PropTypes.string
   },
 
   getDefaultProps: function () {
@@ -378,8 +380,7 @@ var InfiniteSelected = React.createClass({
               ref="filterInput"
               />
           </div>) : null}
-        <ul className="am-selected-list">
-          <Infinite
+        <Infinite
             elementHeight={36}
             containerHeight={200}
             loadingSpinnerDelegate={this.elementInfiniteLoad()}
@@ -389,7 +390,6 @@ var InfiniteSelected = React.createClass({
             >
             {this.state.items}
           </Infinite>
-        </ul>
         <input
           name={this.props.name}
           type="hidden"

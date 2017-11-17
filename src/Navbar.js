@@ -1,19 +1,21 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var Icon = require('./Icon');
 var omit = require('object.omit');
 
-var Navbar = React.createClass({
+var Navbar = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string,
-    theme: React.PropTypes.oneOf(['default']),
-    data: React.PropTypes.array,
-    onSelect: React.PropTypes.func
+    classPrefix: PropTypes.string,
+    theme: PropTypes.oneOf(['default']),
+    data: PropTypes.array,
+    onSelect: PropTypes.func
   },
 
   getDefaultProps: function() {

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Icon = require('../../src/Icon');
 var Grid = require('../../src/Grid');
 var Col = require('../../src/Col');
@@ -31,7 +32,7 @@ var modal = (<Modal
   在微信上关注我们！
 </Modal>);
 
-var DocFooter = React.createClass({
+var DocFooter = createReactClass({
   render: function() {
     return (
       <footer className="amr-footer">

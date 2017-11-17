@@ -1,23 +1,25 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var omit = require('object.omit');
 
-var Button = React.createClass({
+var Button = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    active: React.PropTypes.bool,
-    block: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    radius: React.PropTypes.bool,
-    round: React.PropTypes.bool,
-    component: React.PropTypes.node,
-    href: React.PropTypes.string,
-    target: React.PropTypes.string
+    classPrefix: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+    block: PropTypes.bool,
+    disabled: PropTypes.bool,
+    radius: PropTypes.bool,
+    round: PropTypes.bool,
+    component: PropTypes.node,
+    href: PropTypes.string,
+    target: PropTypes.string
   },
 
   getDefaultProps: function() {

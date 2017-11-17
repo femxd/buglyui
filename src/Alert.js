@@ -1,17 +1,19 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Alert = React.createClass({
+var Alert = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    amStyle: React.PropTypes.oneOf(['secondary', 'success', 'warning',
+    classPrefix: PropTypes.string.isRequired,
+    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning',
       'danger']),
-    onClose: React.PropTypes.func
+    onClose: PropTypes.func
   },
 
   getDefaultProps: function() {

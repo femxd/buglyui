@@ -1,23 +1,25 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var classNames = require('classnames');
 var assign = require('object-assign');
 var omit = require('object.omit');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var NavItem = React.createClass({
+var NavItem = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    active: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    header: React.PropTypes.bool,
-    divider: React.PropTypes.bool,
-    href: React.PropTypes.any,
-    component: React.PropTypes.any,
-    linkComponent: React.PropTypes.any,
-    linkProps: React.PropTypes.object
+    active: PropTypes.bool,
+    disabled: PropTypes.bool,
+    header: PropTypes.bool,
+    divider: PropTypes.bool,
+    href: PropTypes.any,
+    component: PropTypes.any,
+    linkComponent: PropTypes.any,
+    linkProps: PropTypes.object
   },
 
   getDefaultProps: function() {

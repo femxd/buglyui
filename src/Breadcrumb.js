@@ -1,16 +1,18 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var assign = require('object-assign');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var Breadcrumb = React.createClass({
+var Breadcrumb = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    slash: React.PropTypes.bool,
-    component: React.PropTypes.node.isRequired
+    slash: PropTypes.bool,
+    component: PropTypes.node.isRequired
   },
 
   getDefaultProps: function() {
@@ -37,17 +39,17 @@ var Breadcrumb = React.createClass({
   }
 });
 
-Breadcrumb.Item = React.createClass({
+Breadcrumb.Item = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    active: React.PropTypes.bool,
-    href: React.PropTypes.string,
-    title: React.PropTypes.string,
-    target: React.PropTypes.string,
-    component: React.PropTypes.any,
-    linkComponent: React.PropTypes.any,
-    linkProps: React.PropTypes.object
+    active: PropTypes.bool,
+    href: PropTypes.string,
+    title: PropTypes.string,
+    target: PropTypes.string,
+    component: PropTypes.any,
+    linkComponent: PropTypes.any,
+    linkProps: PropTypes.object
   },
 
   getDefaultProps() {

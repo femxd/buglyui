@@ -1,4 +1,4 @@
-var NProgressExample = React.createClass({
+var NProgressExample = createReactClass({
   handleStart: function() {
     this.refs.progress.start();
   },

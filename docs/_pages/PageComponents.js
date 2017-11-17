@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Link = require('react-router').Link;
 
 var Grid = require('../../src/Grid');
@@ -11,7 +12,7 @@ var data = require('./data');
 var DocMain = require('./DocMain');
 var Banner = require('./DocBanner');
 
-var PageComponents = React.createClass({
+var PageComponents = createReactClass({
   getInitialState: function() {
     return {
       activeIndex: null

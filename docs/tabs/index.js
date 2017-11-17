@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -14,7 +15,7 @@ var examples = {
   d2: require('fs').readFileSync(__dirname + '/06-data-d2.js', 'utf-8')
 };
 
-var TabsDoc = React.createClass({
+var TabsDoc = createReactClass({
   render: function() {
     return (
       <Doc>

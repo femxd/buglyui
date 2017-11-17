@@ -1,9 +1,10 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Container = require('../../src/Container');
 
-var DocMain = React.createClass({
+var DocMain = createReactClass({
   render: function() {
     return (
       <main className="amr-main">

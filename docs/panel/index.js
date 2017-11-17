@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -18,7 +19,7 @@ var examples = {
   ucg: require('fs').readFileSync(__dirname + '/10-uncontrolled-group.js', 'utf-8')
 };
 
-var PanelDoc = React.createClass({
+var PanelDoc = createReactClass({
   render: function() {
     return (
       <Doc>

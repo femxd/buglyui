@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Link = require('react-router').Link;
 var Grid = require('../../src/Grid');
 var Col = require('../../src/Col');
@@ -37,7 +38,7 @@ var data = [
   }
 ];
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   render: function() {
     return (
       <Main>

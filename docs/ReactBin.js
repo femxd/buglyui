@@ -1,7 +1,9 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactDOM = require('react-dom');
+var PropTypes = require('prop-types');
 // WTF: babel-core 6 dose not work with webpack...
 // var babel = require('babel-core');
 // var babelPresetReact = require('babel-preset-react');
@@ -85,7 +87,7 @@ var IS_MOBILE = typeof navigator !== 'undefined' && (
     || navigator.userAgent.match(/Windows Phone/i)
   );
 
-var CodeExample = React.createClass({
+var CodeExample = createReactClass({
   componentDidMount: function() {
     if (CodeMirror === undefined) {
       return;
@@ -109,10 +111,10 @@ var CodeExample = React.createClass({
   }
 });
 
-var CodeEditor = React.createClass({
+var CodeEditor = createReactClass({
   propTypes: {
-    readOnly: React.PropTypes.bool,
-    code: React.PropTypes.string
+    readOnly: PropTypes.bool,
+    code: PropTypes.string
   },
 
   componentDidMount: function() {
@@ -174,12 +176,12 @@ var SelfCleaningTimeoutMixin = {
   }
 };
 
-var ReactBin = React.createClass({
+var ReactBin = createReactClass({
   mixins: [SelfCleaningTimeoutMixin],
 
   propTypes: {
-    code: React.PropTypes.string.isRequired,
-    renderCode: React.PropTypes.bool
+    code: PropTypes.string.isRequired,
+    renderCode: PropTypes.bool
   },
 
   getInitialState: function() {

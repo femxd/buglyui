@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Link = require('react-router').Link;
 var StateMixin = require('react-router').State;
 var data = require('./data');
@@ -48,13 +49,13 @@ var Docs = {
   titlebar: require('../titlebar')
 };
 
-var EmptyComponent = React.createClass({
+var EmptyComponent = createReactClass({
   render: function() {
     return false;
   }
 });
 
-var PageComponentsDoc = React.createClass({
+var PageComponentsDoc = createReactClass({
   render: function() {
     var component = this.props.params.component;
     var Doc = Docs[component] || EmptyComponent;

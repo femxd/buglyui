@@ -1,19 +1,21 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var classNames = require('classnames');
 var assign = require('object-assign');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var ListItem = React.createClass({
+var ListItem = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    href: React.PropTypes.string,
-    truncate: React.PropTypes.bool,
-    component: React.PropTypes.any.isRequired,
-    linkComponent: React.PropTypes.any,
-    linkProps: React.PropTypes.object
+    href: PropTypes.string,
+    truncate: PropTypes.bool,
+    component: PropTypes.any.isRequired,
+    linkComponent: PropTypes.any,
+    linkProps: PropTypes.object
   },
 
   getDefaultProps: function() {

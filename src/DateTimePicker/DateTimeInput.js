@@ -2,18 +2,20 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var fecha = require('fecha');
 var Events = require('../utils/Events');
 var isNodeInTree = require('../utils/isNodeInTree');
 var Input = require('../Input');
 var DateTimePicker = require('./DateTimePicker');
 
-var DateTimeInput = React.createClass({
+var DateTimeInput = createReactClass({
   propTypes: {
-    format: React.PropTypes.string,
-    dateTime: React.PropTypes.string,
-    onSelect: React.PropTypes.func,
-    wrapClass: React.PropTypes.string,
+    format: PropTypes.string,
+    dateTime: PropTypes.string,
+    onSelect: PropTypes.func,
+    wrapClass: PropTypes.string,
   },
 
   getDefaultProps: function() {

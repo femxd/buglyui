@@ -2,6 +2,8 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 var DimmerMixin = require('./mixins/DimmerMixin');
@@ -9,20 +11,20 @@ var Events = require('./utils/Events');
 var Close = require('./Close');
 var Icon = require('./Icon');
 
-var Modal = React.createClass({
+var Modal = createReactClass({
   mixins: [ClassNameMixin, DimmerMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    type: React.PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading',
+    classPrefix: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading',
       'actions', 'popup']),
-    title: React.PropTypes.node,
-    confirmText: React.PropTypes.string,
-    cancelText: React.PropTypes.string,
-    closeIcon: React.PropTypes.bool,
-    closeViaDimmer: React.PropTypes.bool,
-    onRequestClose: React.PropTypes.func,
-    modalWidth: React.PropTypes.string
+    title: PropTypes.node,
+    confirmText: PropTypes.string,
+    cancelText: PropTypes.string,
+    closeIcon: PropTypes.bool,
+    closeViaDimmer: PropTypes.bool,
+    onRequestClose: PropTypes.func,
+    modalWidth: PropTypes.string
   },
 
   getDefaultProps: function() {

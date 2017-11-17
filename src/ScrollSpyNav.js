@@ -2,6 +2,8 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var cloneElement = React.cloneElement;
 var assign = require('object-assign');
 var classNames = require('classnames');
@@ -16,13 +18,13 @@ var createChainedFunction = require('./utils/createChainedFunction');
 var canUseDOM = require('./utils/canUseDOM');
 var constants = require('./constants');
 
-var ScrollSpyNav = React.createClass({
+var ScrollSpyNav = createReactClass({
   mixins: [SmoothScrollMixin],
 
   propTypes: {
-    activeClass: React.PropTypes.string,
-    offsetTop: React.PropTypes.number,
-    container: React.PropTypes.any
+    activeClass: PropTypes.string,
+    offsetTop: PropTypes.number,
+    container: PropTypes.any
   },
 
   getDefaultProps: function() {

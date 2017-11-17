@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -22,7 +23,7 @@ var examples = {
   ucheck: require('fs').readFileSync(__dirname + '/15-ucheck.js', 'utf-8')
 };
 
-var FormDoc = React.createClass({
+var FormDoc = createReactClass({
   render: function() {
     return (
       <Doc>

@@ -1,11 +1,13 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var Container = require('../../src/Container');
 
-var DocBanner = React.createClass({
+var DocBanner = createReactClass({
   propTypes: {
-    title: React.PropTypes.string
+    title: PropTypes.string
   },
 
   render: function() {

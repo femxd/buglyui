@@ -1,4 +1,4 @@
-var DateTimeText = React.createClass({
+var DateTimeText = createReactClass({
   getInitialState: function() {
     return {
       dateTime: '2015-05-20 12:14'

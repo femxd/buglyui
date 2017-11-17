@@ -1,18 +1,20 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var PanelGroup = React.createClass({
+var PanelGroup = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    amStyle: React.PropTypes.string,
-    activeKey: React.PropTypes.any,
-    defaultActiveKey: React.PropTypes.any,
-    onSelect: React.PropTypes.func,
-    accordion: React.PropTypes.bool
+    amStyle: PropTypes.string,
+    activeKey: PropTypes.any,
+    defaultActiveKey: PropTypes.any,
+    onSelect: PropTypes.func,
+    accordion: PropTypes.bool
   },
 
   getDefaultProps: function() {

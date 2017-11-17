@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
@@ -12,7 +13,7 @@ var examples = {
   stack: require('fs').readFileSync(__dirname + '/05-stack.js', 'utf-8')
 };
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   render: function() {
     return (
       <Doc>

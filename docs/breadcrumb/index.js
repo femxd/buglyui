@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactBin = require('../ReactBin');
 var utils = require('../utils');
 var Markdown = utils.Markdown;
@@ -12,7 +13,7 @@ var examples = {
   icon: require('fs').readFileSync(__dirname + '/03-icon.js', 'utf-8')
 };
 
-var BreadcrumbDoc = React.createClass({
+var BreadcrumbDoc = createReactClass({
   render: function() {
     return (
       <Doc>

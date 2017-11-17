@@ -1,4 +1,4 @@
-const Example = React.createClass({
+const Example = createReactClass({
   getInitialState() {
     // 将 false 改为 true 默认显示打开 modal
     return {showModal: false};

@@ -1,18 +1,20 @@
 'use strict';
 
 var React = require('react');
+var createReactClass = require('create-react-class');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var ClassNameMixin = require('./mixins/ClassNameMixin');
 
-var AvgGrid = React.createClass({
+var AvgGrid = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: React.PropTypes.string.isRequired,
-    component: React.PropTypes.node,
-    sm: React.PropTypes.number,
-    md: React.PropTypes.number,
-    lg: React.PropTypes.number
+    classPrefix: PropTypes.string.isRequired,
+    component: PropTypes.node,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number
   },
 
   getDefaultProps: function() {
