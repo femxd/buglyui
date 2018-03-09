@@ -14,7 +14,7 @@ var Selected = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     data: PropTypes.array.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.string,
@@ -25,7 +25,7 @@ var Selected = createReactClass({
     optionFilter: PropTypes.func, // (filterText, option) => {}
     dropup: PropTypes.bool,
     btnWidth: PropTypes.number,
-    btnStyle: PropTypes.string,
+    btnstyle: PropTypes.string,
     btnSize: PropTypes.string,
     maxHeight: PropTypes.number,
     sortSelected: PropTypes.bool,
@@ -38,7 +38,7 @@ var Selected = createReactClass({
   getDefaultProps: function () {
     return {
       sortSelected: true,
-      classPrefix: 'selected',
+      classprefix: 'selected',
       placeholder: '点击选择...',
       onChange: function () { },
       onValidateValue: function (value) { return true },
@@ -256,7 +256,7 @@ var Selected = createReactClass({
         className={classNames(this.props.className, classSet)}
         title={status}
         onClose={this.clearFilterInput}
-        btnStyle={this.props.btnStyle}
+        btnstyle={this.props.btnstyle}
         btnSize={this.props.btnSize}
         btnInlineStyle={{ width: this.props.btnWidth }}
         contentInlineStyle={{ minWidth: this.state.dropdownWidth }}
@@ -274,7 +274,7 @@ var Selected = createReactClass({
             <Input
               onChange={this.handleUserInput}
               autoComplete="off"
-              standalone
+              standalone="on"
               ref="filterInput"
               />
           </div>) : null}

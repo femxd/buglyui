@@ -11,7 +11,7 @@ var Button = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     active: PropTypes.bool,
     block: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -24,9 +24,9 @@ var Button = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'btn',
+      classprefix: 'btn',
       type: 'button',
-      amStyle: 'default'
+      amstyle: 'default'
     };
   },
 

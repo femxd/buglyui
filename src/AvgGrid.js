@@ -10,7 +10,7 @@ var AvgGrid = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     component: PropTypes.node,
     sm: PropTypes.number,
     md: PropTypes.number,
@@ -19,7 +19,7 @@ var AvgGrid = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'avg',
+      classprefix: 'avg',
       component: 'ul'
     };
   },

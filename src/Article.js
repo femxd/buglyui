@@ -10,7 +10,7 @@ var Article = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     title: PropTypes.node,
     meta: PropTypes.node,
     lead: PropTypes.node
@@ -18,7 +18,7 @@ var Article = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'article'
+      classprefix: 'article'
     };
   },
 

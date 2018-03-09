@@ -18,7 +18,7 @@ var List = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'list',
+      classprefix: 'list',
       component: 'ul'
     };
   },

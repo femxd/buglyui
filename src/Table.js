@@ -10,7 +10,7 @@ var Table = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     bordered: PropTypes.bool,
     compact: PropTypes.bool,
     hover: PropTypes.bool,
@@ -21,7 +21,7 @@ var Table = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'table'
+      classprefix: 'table'
     };
   },
 

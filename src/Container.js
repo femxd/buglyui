@@ -10,13 +10,13 @@ var Container = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     component: PropTypes.node.isRequired
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'container',
+      classprefix: 'container',
       component: 'div'
     };
   },

@@ -22,7 +22,7 @@ var Dropdown = createReactClass({
     title: PropTypes.node.isRequired,
     dropup: PropTypes.bool,
     navItem: PropTypes.bool,
-    btnStyle: PropTypes.string,
+    btnstyle: PropTypes.string,
     btnSize: PropTypes.string,
     btnInlineStyle: PropTypes.object,
     contentInlineStyle: PropTypes.object,
@@ -36,7 +36,7 @@ var Dropdown = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'dropdown',
+      classprefix: 'dropdown',
       contentComponent: 'ul'
     };
   },
@@ -139,7 +139,7 @@ var Dropdown = createReactClass({
   render: function() {
     var classSet = this.getClassSet();
     var Component = this.props.navItem ? 'li' : 'div';
-    var btnClassPrefix = this.props.navItem ? '' : 'btn';
+    var btnclassprefix = this.props.navItem ? '' : 'btn';
     var btnComponent = this.props.navItem ? 'a' : null;
     var caret = (
       <Icon
@@ -157,17 +157,17 @@ var Dropdown = createReactClass({
 
     return (
       <Component
-        btnStyle={null}
+        btnstyle={null}
         className={classNames(this.props.className, classSet)}
       >
         <Button
           onClick={this.handleDropdownClick}
-          amStyle={this.props.btnStyle}
-          amSize={this.props.btnSize}
+          amstyle={this.props.btnstyle}
+          amsize={this.props.btnSize}
           style={this.props.btnInlineStyle}
           className={classNames(this.prefixClass('toggle'),
             this.props.toggleClassName)}
-          classPrefix={btnClassPrefix}
+          classprefix={btnclassprefix}
           component={btnComponent}
           ref="dropdownToggle"
         >

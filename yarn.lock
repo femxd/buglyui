@@ -5276,9 +5276,9 @@ react-hot-loader@2.0.0-alpha:
     react-hot-api "^0.5.0-alpha"
     source-map "^0.4.4"
 
-react-infinite:
-  version "0.10.0"
-  resolved "http://r.tnpm.oa.com/react-infinite/download/react-infinite-0.10.0.tgz#04567469dd26b2f0d53bd9793bafbcd26e05c58b"
+react-infinite@0.12.1:
+  version "0.12.1"
+  resolved "http://r.tnpm.oa.com/react-infinite/download/react-infinite-0.12.1.tgz#74c5981f9ddd23f065f414cbb00c6d204bf7eda1"
   dependencies:
     lodash.isarray "3.0.4"
     lodash.isfinite "3.2.0"

@@ -20,7 +20,7 @@ var Accordion = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'accordion',
+      classprefix: 'accordion',
       theme: 'default'
     };
   },
@@ -51,7 +51,7 @@ var Accordion = createReactClass({
     return (
       <section
         {...this.props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(classSet, this.props.className)}
       >
         {this.props.data.map(function(item, index) {

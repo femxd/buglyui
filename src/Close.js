@@ -11,7 +11,7 @@ var Close = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     component: PropTypes.node,
     spin: PropTypes.bool,
     alt: PropTypes.bool,
@@ -20,7 +20,7 @@ var Close = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'close',
+      classprefix: 'close',
       type: 'button'
     };
   },

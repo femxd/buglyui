@@ -18,7 +18,7 @@ var Nav = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'nav',
+      classprefix: 'nav',
       component: 'ul'
     };
   },

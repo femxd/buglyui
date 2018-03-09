@@ -22,14 +22,14 @@ var Col = createReactClass({
     smPull: PropTypes.number,
     mdPull: PropTypes.number,
     lgPull: PropTypes.number,
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     component: PropTypes.node.isRequired,
     end: PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'u',
+      classprefix: 'u',
       component: 'div'
     };
   },

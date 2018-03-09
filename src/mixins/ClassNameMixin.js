@@ -7,27 +7,27 @@ var nsPrefix = (constants.NAMESPACE ? constants.NAMESPACE + '-' : '');
 module.exports = {
   getClassSet: function(ignorePrefix) {
     var classNames = {};
-    // uses `.am-` as prefix if `classPrefix` is not defined
+    // uses `.am-` as prefix if `classprefix` is not defined
     var prefix = nsPrefix;
 
-    if (this.props.classPrefix) {
-      var classPrefix = this.setClassNamespace();
+    if (this.props.classprefix) {
+      var classprefix = this.setClassNamespace();
 
-      prefix = classPrefix + '-';
+      prefix = classprefix + '-';
 
       // don't return prefix if flag set
-      !ignorePrefix && (classNames[classPrefix] = true);
+      !ignorePrefix && (classNames[classprefix] = true);
     }
 
-    var amSize = this.props.amSize;
-    var amStyle = this.props.amStyle;
+    var amsize = this.props.amsize;
+    var amstyle = this.props.amstyle;
 
-    if (amSize) {
-      classNames[prefix + amSize] = true;
+    if (amsize) {
+      classNames[prefix + amsize] = true;
     }
 
-    if (amStyle) {
-      classNames[prefix + amStyle] = true;
+    if (amstyle) {
+      classNames[prefix + amstyle] = true;
     }
 
     // add theme className for widgets
@@ -47,16 +47,16 @@ module.exports = {
     classNames[constants.CLASSES.cf] = this.props.cf;
 
     // am-divider
-    if (this.props.classPrefix !== 'divider') {
+    if (this.props.classprefix !== 'divider') {
       classNames[constants.CLASSES.divider] = this.props.divider;
     }
 
     return classNames;
   },
 
-  // add namespace to classPrefix
-  setClassNamespace: function(classPrefix) {
-    var prefix = classPrefix || this.props.classPrefix || '';
+  // add namespace to classprefix
+  setClassNamespace: function(classprefix) {
+    var prefix = classprefix || this.props.classprefix || '';
 
     return nsPrefix + prefix;
   },

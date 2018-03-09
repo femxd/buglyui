@@ -24,7 +24,7 @@ var NavItem = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'nav',
+      classprefix: 'nav',
       component: 'li'
     };
   },
@@ -35,7 +35,7 @@ var NavItem = createReactClass({
     var Component = props.component;
 
     // del am-nav
-    classes[this.setClassNamespace(props.classPrefix)] = false;
+    classes[this.setClassNamespace(props.classprefix)] = false;
 
     // set classes
     classes[this.prefixClass('header')] = props.header;

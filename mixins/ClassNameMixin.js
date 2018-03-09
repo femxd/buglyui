@@ -19,15 +19,15 @@ module.exports = {
       !ignorePrefix && (classNames[classPrefix] = true);
     }
 
-    var amSize = this.props.amSize;
-    var amStyle = this.props.amStyle;
+    var amsize = this.props.amsize;
+    var amstyle = this.props.amstyle;
 
-    if (amSize) {
-      classNames[prefix + amSize] = true;
+    if (amsize) {
+      classNames[prefix + amsize] = true;
     }
 
-    if (amStyle) {
-      classNames[prefix + amStyle] = true;
+    if (amstyle) {
+      classNames[prefix + amstyle] = true;
     }
 
     // add theme className for widgets

@@ -15,7 +15,7 @@ var Modal = createReactClass({
   mixins: [ClassNameMixin, DimmerMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading',
       'actions', 'popup']),
     title: PropTypes.node,
@@ -29,7 +29,7 @@ var Modal = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'modal',
+      classprefix: 'modal',
       closeIcon: true,
       confirmText: '确定',
       cancelText: '取消',

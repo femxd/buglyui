@@ -11,15 +11,15 @@ var Thumbnail = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
-    standalone: PropTypes.bool,
+    classprefix: PropTypes.string,
+    standalone: PropTypes.string,
     caption: PropTypes.node,
     component: PropTypes.node
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'thumbnail',
+      classprefix: 'thumbnail',
       component: 'figure'
     };
   },

@@ -37,7 +37,7 @@ var Slider = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'slider',
+      classprefix: 'slider',
       theme: 'default',
       directionNav: true,
       controlNav: true,

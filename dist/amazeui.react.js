@@ -1,4 +1,4 @@
-/*! buglyui v1.2.15 | by Amaze UI Team | (c) 2017 AllMobilize, Inc. | Licensed under MIT | 2017-11-17T19:17:41+0800 */
+/*! buglyui v1.2.15 | by Amaze UI Team | (c) 2018 AllMobilize, Inc. | Licensed under MIT | 2018-03-09T11:14:28+0800 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"), require("react-dom"));
@@ -168,7 +168,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    component: PropTypes.node.isRequired,
 	    collapse: PropTypes.bool,
 	    fixed: PropTypes.bool
@@ -176,7 +176,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'g',
+	      classprefix: 'g',
 	      component: 'div'
 	    };
 	  },
@@ -2483,27 +2483,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	  getClassSet: function getClassSet(ignorePrefix) {
 	    var classNames = {};
-	    // uses `.am-` as prefix if `classPrefix` is not defined
+	    // uses `.am-` as prefix if `classprefix` is not defined
 	    var prefix = nsPrefix;
 
-	    if (this.props.classPrefix) {
-	      var classPrefix = this.setClassNamespace();
+	    if (this.props.classprefix) {
+	      var classprefix = this.setClassNamespace();
 
-	      prefix = classPrefix + '-';
+	      prefix = classprefix + '-';
 
 	      // don't return prefix if flag set
-	      !ignorePrefix && (classNames[classPrefix] = true);
+	      !ignorePrefix && (classNames[classprefix] = true);
 	    }
 
-	    var amSize = this.props.amSize;
-	    var amStyle = this.props.amStyle;
+	    var amsize = this.props.amsize;
+	    var amstyle = this.props.amstyle;
 
-	    if (amSize) {
-	      classNames[prefix + amSize] = true;
+	    if (amsize) {
+	      classNames[prefix + amsize] = true;
 	    }
 
-	    if (amStyle) {
-	      classNames[prefix + amStyle] = true;
+	    if (amstyle) {
+	      classNames[prefix + amstyle] = true;
 	    }
 
 	    // add theme className for widgets
@@ -2523,16 +2523,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classNames[constants.CLASSES.cf] = this.props.cf;
 
 	    // am-divider
-	    if (this.props.classPrefix !== 'divider') {
+	    if (this.props.classprefix !== 'divider') {
 	      classNames[constants.CLASSES.divider] = this.props.divider;
 	    }
 
 	    return classNames;
 	  },
 
-	  // add namespace to classPrefix
-	  setClassNamespace: function setClassNamespace(classPrefix) {
-	    var prefix = classPrefix || this.props.classPrefix || '';
+	  // add namespace to classprefix
+	  setClassNamespace: function setClassNamespace(classprefix) {
+	    var prefix = classprefix || this.props.classprefix || '';
 
 	    return nsPrefix + prefix;
 	  },
@@ -2611,14 +2611,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    smPull: PropTypes.number,
 	    mdPull: PropTypes.number,
 	    lgPull: PropTypes.number,
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    component: PropTypes.node.isRequired,
 	    end: PropTypes.bool
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'u',
+	      classprefix: 'u',
 	      component: 'div'
 	    };
 	  },
@@ -2709,13 +2709,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    component: PropTypes.node.isRequired
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'container',
+	      classprefix: 'container',
 	      component: 'div'
 	    };
 	  },
@@ -2754,7 +2754,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    component: PropTypes.node,
 	    sm: PropTypes.number,
 	    md: PropTypes.number,
@@ -2763,7 +2763,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'avg',
+	      classprefix: 'avg',
 	      component: 'ul'
 	    };
 	  },
@@ -2811,7 +2811,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    active: PropTypes.bool,
 	    block: PropTypes.bool,
 	    disabled: PropTypes.bool,
@@ -2824,9 +2824,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'btn',
+	      classprefix: 'btn',
 	      type: 'button',
-	      amStyle: 'default'
+	      amstyle: 'default'
 	    };
 	  },
 
@@ -3001,12 +3001,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired
+	    classprefix: PropTypes.string.isRequired
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'btn-toolbar'
+	      classprefix: 'btn-toolbar'
 	    };
 	  },
 
@@ -3204,14 +3204,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    stacked: PropTypes.bool,
 	    justify: PropTypes.bool
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'btn-group'
+	      classprefix: 'btn-group'
 	    };
 	  },
 
@@ -3251,14 +3251,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    horizontal: PropTypes.bool,
 	    inline: PropTypes.bool
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'form'
+	      classprefix: 'form'
 	    };
 	  },
 
@@ -3297,7 +3297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  propTypes: {
 	    validation: PropTypes.string,
-	    amSize: PropTypes.oneOf(['sm', 'lg']),
+	    amsize: PropTypes.oneOf(['sm', 'lg']),
 	    hasFeedback: PropTypes.bool
 	  },
 
@@ -3309,8 +3309,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classSet[this.setClassNamespace('form-feedback')] = this.props.hasFeedback;
 	    classSet[this.setClassNamespace('form-icon')] = this.props.hasFeedback;
 
-	    if (this.props.amSize) {
-	      classSet[this.setClassNamespace('form-group-' + this.props.amSize)] = true;
+	    if (this.props.amsize) {
+	      classSet[this.setClassNamespace('form-group-' + this.props.amsize)] = true;
 	    }
 
 	    return React.createElement(
@@ -3351,7 +3351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      {
 	        className: this.setClassNamespace('form-file')
 	      },
-	      React.createElement(Input, { type: 'file', standalone: true })
+	      React.createElement(Input, { type: 'file', standalone: 'on' })
 	    );
 	  }
 	});
@@ -3390,13 +3390,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    disabled: PropTypes.bool,
 	    radius: PropTypes.bool,
 	    round: PropTypes.bool,
-	    amSize: PropTypes.oneOf(['sm', 'lg']),
-	    amStyle: PropTypes.string,
+	    amsize: PropTypes.oneOf(['sm', 'lg']),
+	    amstyle: PropTypes.string,
 	    validation: PropTypes.oneOf(['default', 'success', 'warning', 'error']),
 	    label: PropTypes.node,
 	    help: PropTypes.node,
 	    addonBefore: PropTypes.node,
-	    addonAfter: PropTypes.node,
+	    addonafter: PropTypes.node,
 	    btnBefore: PropTypes.node,
 	    btnAfter: PropTypes.node,
 	    id: PropTypes.string,
@@ -3405,7 +3405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    labelClassName: PropTypes.string,
 	    helpClassName: PropTypes.string,
 	    icon: PropTypes.string,
-	    standalone: PropTypes.bool,
+	    standalone: PropTypes.string,
 	    inline: PropTypes.bool,
 	    hasFeedback: PropTypes.bool
 	  },
@@ -3463,8 +3463,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classSet[constants.CLASSES.round] = this.props.round;
 	    classSet[constants.CLASSES.radius] = this.props.radius;
 
-	    if (this.props.amSize && !this.props.standalone) {
-	      classSet[this.setClassNamespace('input-' + this.props.amSize)] = true;
+	    if (this.props.amsize && !this.props.standalone) {
+	      classSet[this.setClassNamespace('input-' + this.props.amsize)] = true;
 	    }
 
 	    var classes = classNames(this.props.className, fieldClassName, classSet);
@@ -3569,10 +3569,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      { className: addonClassName, key: 'addonBefore' },
 	      this.props.addonBefore
 	    ) : null;
-	    var addonAfter = this.props.addonAfter ? React.createElement(
+	    var addonafter = this.props.addonafter ? React.createElement(
 	      'span',
-	      { className: addonClassName, key: 'addonAfter' },
-	      this.props.addonAfter
+	      { className: addonClassName, key: 'addonafter' },
+	      this.props.addonafter
 	    ) : null;
 	    var btnBefore = this.props.btnBefore ? React.createElement(
 	      'span',
@@ -3586,15 +3586,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ) : null;
 	    var classSet = {};
 
-	    if (this.props.amSize) {
-	      classSet[groupPrefix + '-' + this.props.amSize] = true;
+	    if (this.props.amsize) {
+	      classSet[groupPrefix + '-' + this.props.amsize] = true;
 	    }
 
-	    if (this.props.amStyle) {
-	      classSet[groupPrefix + '-' + this.props.amStyle] = true;
+	    if (this.props.amstyle) {
+	      classSet[groupPrefix + '-' + this.props.amstyle] = true;
 	    }
 
-	    return addonBefore || addonAfter || btnBefore || btnAfter ? React.createElement(
+	    return addonBefore || addonafter || btnBefore || btnAfter ? React.createElement(
 	      'div',
 	      {
 	        className: classNames(groupPrefix, classSet),
@@ -3603,7 +3603,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      addonBefore,
 	      btnBefore,
 	      children,
-	      addonAfter,
+	      addonafter,
 	      btnAfter
 	    ) : children;
 	  },
@@ -3650,7 +3650,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      {
 	        className: groupClassName,
 	        validation: this.props.validation,
-	        amSize: this.props.amSize,
+	        amsize: this.props.amsize,
 	        hasFeedback: this.props.hasFeedback
 	      },
 	      [this.renderLabel(), this.renderWrapper(this.renderInputGroup(this.renderInput())), this.renderIcon(), this.renderHelp()]
@@ -3684,7 +3684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    amStyle: PropTypes.string,
+	    amstyle: PropTypes.string,
 	    fw: PropTypes.bool,
 	    spin: PropTypes.bool,
 	    button: PropTypes.bool,
@@ -3696,7 +3696,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'icon',
+	      classprefix: 'icon',
 	      component: 'span'
 	    };
 	  },
@@ -3715,7 +3715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classes[prefixClass('btn')] = props.button;
 
 	    // button style
-	    props.button && props.amStyle && (classes[setClassNamespace(props.amStyle)] = true);
+	    props.button && props.amstyle && (classes[setClassNamespace(props.amstyle)] = true);
 
 	    // am-icon-fw
 	    classes[prefixClass('fw')] = props.fw;
@@ -3762,7 +3762,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  propTypes: {
 	    type: PropTypes.oneOf(['radio', 'checkbox']),
 	    disabled: PropTypes.bool,
-	    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning', 'danger']),
+	    amstyle: PropTypes.oneOf(['secondary', 'success', 'warning', 'danger']),
 	    inline: PropTypes.bool,
 	    hasFeedback: PropTypes.bool
 	  },
@@ -3779,8 +3779,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classSet[this.setClassNamespace(this.props.type)] = !this.props.inline;
 	    classSet[this.setClassNamespace(this.props.type + '-inline')] = this.props.inline;
 
-	    if (this.props.amStyle) {
-	      classSet[this.setClassNamespace(this.props.amStyle)] = true;
+	    if (this.props.amstyle) {
+	      classSet[this.setClassNamespace(this.props.amstyle)] = true;
 	    }
 
 	    return React.createElement(
@@ -3789,7 +3789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      React.createElement(Input, _extends({}, this.props, {
 	        ref: 'field',
 	        className: this.setClassNamespace('ucheck-checkbox'),
-	        standalone: true
+	        standalone: 'on'
 	      })),
 	      React.createElement(
 	        'span',
@@ -3893,15 +3893,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
-	    standalone: PropTypes.bool,
+	    classprefix: PropTypes.string,
+	    standalone: PropTypes.string,
 	    caption: PropTypes.node,
 	    component: PropTypes.node
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'thumbnail',
+	      classprefix: 'thumbnail',
 	      component: 'figure'
 	    };
 	  },
@@ -3997,18 +3997,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string
+	    classprefix: PropTypes.string
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'thumbnails'
+	      classprefix: 'thumbnails'
 	    };
 	  },
 
 	  render: function render() {
 	    var classes = classNames(this.getClassSet(), this.props.className);
-	    var props = omit(this.props, 'classPrefix');
+	    var props = omit(this.props, 'classprefix');
 
 	    return React.createElement(
 	      AvgGrid,
@@ -4046,7 +4046,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    bordered: PropTypes.bool,
 	    compact: PropTypes.bool,
 	    hover: PropTypes.bool,
@@ -4057,7 +4057,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'table'
+	      classprefix: 'table'
 	    };
 	  },
 
@@ -4118,7 +4118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'nav',
+	      classprefix: 'nav',
 	      component: 'ul'
 	    };
 	  },
@@ -4179,7 +4179,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'nav',
+	      classprefix: 'nav',
 	      component: 'li'
 	    };
 	  },
@@ -4190,7 +4190,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var Component = props.component;
 
 	    // del am-nav
-	    classes[this.setClassNamespace(props.classPrefix)] = false;
+	    classes[this.setClassNamespace(props.classprefix)] = false;
 
 	    // set classes
 	    classes[this.prefixClass('header')] = props.header;
@@ -4351,7 +4351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'breadcrumb',
+	      classprefix: 'breadcrumb',
 	      component: 'ul'
 	    };
 	  },
@@ -4460,7 +4460,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'pagination',
+	      classprefix: 'pagination',
 	      component: 'ul'
 	    };
 	  },
@@ -4575,7 +4575,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'pagination',
+	      classprefix: 'pagination',
 	      component: 'li'
 	    };
 	  },
@@ -4647,7 +4647,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'topbar',
+	      classprefix: 'topbar',
 	      component: 'header'
 	    };
 	  },
@@ -4715,7 +4715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      Button,
 	      {
-	        amSize: 'sm',
+	        amsize: 'sm',
 	        onClick: this.handleToggle,
 	        className: classNames(this.prefixClass('btn'), this.prefixClass('toggle'), this.setClassNamespace('show-sm-only'))
 	      },
@@ -4844,7 +4844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'tabs',
+	      classprefix: 'tabs',
 	      animation: 'fade'
 	    };
 	  },
@@ -5000,7 +5000,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'div',
 	      _extends({}, props, {
-	        'data-am-widget': this.props.theme ? this.props.classPrefix : null,
+	        'data-am-widget': this.props.theme ? this.props.classprefix : null,
 	        className: classNames(classSet, this.props.className)
 	      }),
 	      children
@@ -5520,7 +5520,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    title: PropTypes.node,
 	    meta: PropTypes.node,
 	    lead: PropTypes.node
@@ -5528,7 +5528,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'article'
+	      classprefix: 'article'
 	    };
 	  },
 
@@ -5638,7 +5638,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'badge',
+	      classprefix: 'badge',
 	      component: 'span'
 	    };
 	  },
@@ -5698,7 +5698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    component: PropTypes.node,
 	    spin: PropTypes.bool,
 	    alt: PropTypes.bool,
@@ -5707,7 +5707,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'close',
+	      classprefix: 'close',
 	      type: 'button'
 	    };
 	  },
@@ -5765,7 +5765,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'list',
+	      classprefix: 'list',
 	      component: 'ul'
 	    };
 	  },
@@ -5897,15 +5897,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    header: PropTypes.node,
 	    footer: PropTypes.node,
 	    id: PropTypes.string,
-	    amStyle: PropTypes.string,
+	    amstyle: PropTypes.string,
 	    onSelect: PropTypes.func,
 	    eventKey: PropTypes.any
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'panel',
-	      amStyle: 'default'
+	      classprefix: 'panel',
+	      amstyle: 'default'
 	    };
 	  },
 
@@ -6085,7 +6085,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    amStyle: PropTypes.string,
+	    amstyle: PropTypes.string,
 	    activeKey: PropTypes.any,
 	    defaultActiveKey: PropTypes.any,
 	    onSelect: PropTypes.func,
@@ -6094,7 +6094,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'panel-group'
+	      classprefix: 'panel-group'
 	    };
 	  },
 
@@ -6131,7 +6131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var activeKey = this.props.activeKey != null ? this.props.activeKey : this.state.activeKey;
 
 	    var props = {
-	      amStyle: child.props.amStyle || this.props.amStyle,
+	      amstyle: child.props.amstyle || this.props.amstyle,
 	      key: child.key ? child.key : index,
 	      ref: child.ref
 	    };
@@ -6182,13 +6182,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    label: PropTypes.string,
 	    active: PropTypes.bool,
 	    striped: PropTypes.bool,
-	    amSize: PropTypes.string,
-	    amStyle: PropTypes.string
+	    amsize: PropTypes.string,
+	    amstyle: PropTypes.string
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'progress'
+	      classprefix: 'progress'
 	    };
 	  },
 
@@ -6198,13 +6198,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    var classes = {};
 	    var prefix = this.prefixClass('bar');
-	    var amStyle = this.props.amStyle;
+	    var amstyle = this.props.amstyle;
 
 	    // set am-progress-bar
 	    classes[prefix] = true;
 
-	    if (amStyle) {
-	      classes[prefix + '-' + amStyle] = true;
+	    if (amstyle) {
+	      classes[prefix + '-' + amstyle] = true;
 	    }
 
 	    return React.createElement(
@@ -6282,14 +6282,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
-	    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning', 'danger']),
+	    classprefix: PropTypes.string.isRequired,
+	    amstyle: PropTypes.oneOf(['secondary', 'success', 'warning', 'danger']),
 	    onClose: PropTypes.func
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'alert'
+	      classprefix: 'alert'
 	    };
 	  },
 
@@ -6309,8 +6309,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var classSet = this.getClassSet();
 	    var isCloseable = !!this.props.onClose;
 
-	    if (this.props.amStyle) {
-	      classSet[this.prefixClass(this.props.amStyle)] = true;
+	    if (this.props.amstyle) {
+	      classSet[this.prefixClass(this.props.amstyle)] = true;
 	    }
 
 	    classSet[this.prefixClass('closeable')] = isCloseable;
@@ -6451,7 +6451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        showTimePicker: this.props.showTimePicker,
 	        onSelect: this.handleSelect,
 	        onClose: this.handleClose,
-	        amStyle: this.props.amStyle,
+	        amstyle: this.props.amstyle,
 	        dateTime: this.state.value,
 	        viewMode: this.props.viewMode,
 	        minViewMode: this.props.minViewMode,
@@ -6939,7 +6939,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    showTimePicker: PropTypes.bool,
 	    showDatePicker: PropTypes.bool,
 	    caretDisplayed: PropTypes.bool,
-	    amStyle: PropTypes.oneOf(['success', 'danger', 'warning']),
+	    amstyle: PropTypes.oneOf(['success', 'danger', 'warning']),
 	    viewMode: PropTypes.string,
 	    minViewMode: PropTypes.string,
 	    onSelect: PropTypes.func.isRequired,
@@ -6955,7 +6955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker',
+	      classprefix: 'datepicker',
 	      dateTime: '',
 	      format: 'YYYY-MM-DD HH:mm',
 	      showTimePicker: true,
@@ -7096,7 +7096,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  render: function render() {
 	    var classSet = this.getClassSet();
 
-	    this.props.amStyle && (classSet[this.prefixClass(this.props.amStyle)] = true);
+	    this.props.amstyle && (classSet[this.prefixClass(this.props.amstyle)] = true);
 
 	    return React.createElement(
 	      'div',
@@ -7155,7 +7155,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker',
+	      classprefix: 'datepicker',
 	      date: new Date(),
 	      daysOfWeekDisabled: [],
 	      viewMode: 'days',
@@ -7445,7 +7445,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -7641,7 +7641,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -7709,7 +7709,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -7769,7 +7769,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -7906,7 +7906,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker',
+	      classprefix: 'datepicker',
 	      format: 'HH:mm'
 	    };
 	  },
@@ -8114,7 +8114,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -8170,7 +8170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -8224,7 +8224,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'datepicker'
+	      classprefix: 'datepicker'
 	    };
 	  },
 
@@ -8320,7 +8320,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    title: PropTypes.node.isRequired,
 	    dropup: PropTypes.bool,
 	    navItem: PropTypes.bool,
-	    btnStyle: PropTypes.string,
+	    btnstyle: PropTypes.string,
 	    btnSize: PropTypes.string,
 	    btnInlineStyle: PropTypes.object,
 	    contentInlineStyle: PropTypes.object,
@@ -8334,7 +8334,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'dropdown',
+	      classprefix: 'dropdown',
 	      contentComponent: 'ul'
 	    };
 	  },
@@ -8431,7 +8431,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  render: function render() {
 	    var classSet = this.getClassSet();
 	    var Component = this.props.navItem ? 'li' : 'div';
-	    var btnClassPrefix = this.props.navItem ? '' : 'btn';
+	    var btnclassprefix = this.props.navItem ? '' : 'btn';
 	    var btnComponent = this.props.navItem ? 'a' : null;
 	    var caret = React.createElement(Icon, {
 	      className: this.props.caretClassName,
@@ -8446,18 +8446,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      Component,
 	      {
-	        btnStyle: null,
+	        btnstyle: null,
 	        className: classNames(this.props.className, classSet)
 	      },
 	      React.createElement(
 	        Button,
 	        {
 	          onClick: this.handleDropdownClick,
-	          amStyle: this.props.btnStyle,
-	          amSize: this.props.btnSize,
+	          amstyle: this.props.btnstyle,
+	          amsize: this.props.btnSize,
 	          style: this.props.btnInlineStyle,
 	          className: classNames(this.prefixClass('toggle'), this.props.toggleClassName),
-	          classPrefix: btnClassPrefix,
+	          classprefix: btnclassprefix,
 	          component: btnComponent,
 	          ref: 'dropdownToggle'
 	        },
@@ -8558,7 +8558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin, DimmerMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    type: PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading', 'actions', 'popup']),
 	    title: PropTypes.node,
 	    confirmText: PropTypes.string,
@@ -8571,7 +8571,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'modal',
+	      classprefix: 'modal',
 	      closeIcon: true,
 	      confirmText: '确定',
 	      cancelText: '取消',
@@ -9270,26 +9270,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-	    positionLeft: PropTypes.number,
-	    positionTop: PropTypes.number,
-	    amSize: PropTypes.oneOf(['sm', 'lg']),
-	    amStyle: PropTypes.string,
-	    disableCaret: PropTypes.bool
+	    positionleft: PropTypes.number,
+	    positiontop: PropTypes.number,
+	    amsize: PropTypes.oneOf(['sm', 'lg']),
+	    amstyle: PropTypes.string,
+	    disablecaret: PropTypes.bool
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'popover'
+	      classprefix: 'popover'
 	    };
 	  },
 
 	  render: function render() {
 	    var classSet = this.getClassSet();
 	    var style = {
-	      left: this.props.positionLeft,
-	      top: this.props.positionTop,
+	      left: this.props.positionleft,
+	      top: this.props.positiontop,
 	      display: 'block'
 	    };
 
@@ -9307,7 +9307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { className: this.prefixClass('inner') },
 	        this.props.children
 	      ),
-	      !this.props.disableCaret && React.createElement('div', { className: this.prefixClass('caret') })
+	      !this.props.disablecaret && React.createElement('div', { className: this.prefixClass('caret') })
 	    );
 	  }
 	});
@@ -9502,10 +9502,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return cloneElement(this.props.popover, {
 	      onRequestHide: this.close,
 	      placement: this.props.placement,
-	      positionLeft: this.state.popoverLeft,
-	      positionTop: this.state.popoverTop,
-	      amStyle: popover.props.amStyle || this.props.amStyle,
-	      amSize: popover.props.amSize || this.props.amSize
+	      positionleft: this.state.popoverLeft,
+	      positiontop: this.state.popoverTop,
+	      amstyle: popover.props.amstyle || this.props.amstyle,
+	      amsize: popover.props.amsize || this.props.amsize
 	    });
 	  },
 
@@ -10214,7 +10214,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    data: PropTypes.array.isRequired,
 	    placeholder: PropTypes.string,
 	    value: PropTypes.string,
@@ -10225,7 +10225,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    optionFilter: PropTypes.func, // (filterText, option) => {}
 	    dropup: PropTypes.bool,
 	    btnWidth: PropTypes.number,
-	    btnStyle: PropTypes.string,
+	    btnstyle: PropTypes.string,
 	    btnSize: PropTypes.string,
 	    maxHeight: PropTypes.number,
 	    sortSelected: PropTypes.bool,
@@ -10238,7 +10238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      sortSelected: true,
-	      classPrefix: 'selected',
+	      classprefix: 'selected',
 	      placeholder: '点击选择...',
 	      onChange: function onChange() {},
 	      onValidateValue: function onValidateValue(value) {
@@ -10457,7 +10457,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        className: classNames(this.props.className, classSet),
 	        title: status,
 	        onClose: this.clearFilterInput,
-	        btnStyle: this.props.btnStyle,
+	        btnstyle: this.props.btnstyle,
 	        btnSize: this.props.btnSize,
 	        btnInlineStyle: { width: this.props.btnWidth },
 	        contentInlineStyle: { minWidth: this.state.dropdownWidth },
@@ -10476,7 +10476,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        React.createElement(Input, {
 	          onChange: this.handleUserInput,
 	          autoComplete: 'off',
-	          standalone: true,
+	          standalone: 'on',
 	          ref: 'filterInput'
 	        })
 	      ) : null,
@@ -12292,7 +12292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    data: PropTypes.array.isRequired,
 	    placeholder: PropTypes.string,
 	    value: PropTypes.string,
@@ -12316,7 +12316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      sortSelected: true,
-	      classPrefix: 'selected',
+	      classprefix: 'selected',
 	      placeholder: '点击选择...',
 	      onChange: function onChange() {},
 	      onValidateValue: function onValidateValue(value) {
@@ -12380,7 +12380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var groupHeader;
 	    var items = [];
 	    var temp = new Date().getTime();
-	    data.slice(start, end).forEach(function (option, i) {
+	    data && data.slice(start, end).forEach(function (option, i) {
 	      var checked = this.hasValue(option.value);
 	      var checkedClass = checked ? this.setClassNamespace('checked') : null;
 	      var checkedIcon = checked ? React.createElement(Icon, { icon: 'check' }) : null;
@@ -12482,9 +12482,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  setDropdownWidth: function setDropdownWidth() {
 	    if (this.isMounted()) {
-	      var toggleButton = ReactDOM.findDOMNode(this.refs.dropdown.refs.dropdownToggle);
+	      var that = this;
+	      setTimeout(function () {
+	        var toggleButton = ReactDOM.findDOMNode(that.refs.dropdown.refs.dropdownToggle);
 
-	      toggleButton && this.setState({ dropdownWidth: toggleButton.offsetWidth });
+	        toggleButton && that.setState({ dropdownWidth: toggleButton.offsetWidth });
+	      }, 300);
 	    }
 	  },
 
@@ -12658,21 +12661,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	        React.createElement(Input, {
 	          onChange: this.handleUserInput,
 	          autoComplete: 'off',
-	          standalone: true,
+	          standalone: 'on',
 	          ref: 'filterInput'
 	        })
 	      ) : null,
 	      React.createElement(
-	        Infinite,
-	        {
-	          elementHeight: 36,
-	          containerHeight: 200,
-	          loadingSpinnerDelegate: this.elementInfiniteLoad(),
-	          isInfiniteLoading: this.state.isInfiniteLoading,
-	          infiniteLoadBeginEdgeOffset: 200,
-	          onInfiniteLoad: this.handleInfiniteLoad
-	        },
-	        this.state.items
+	        'ul',
+	        { className: 'am-selected-list' },
+	        React.createElement(
+	          Infinite,
+	          {
+	            elementHeight: 36,
+	            containerHeight: 200,
+	            loadingSpinnerDelegate: this.elementInfiniteLoad(),
+	            isInfiniteLoading: this.state.isInfiniteLoading,
+	            infiniteLoadBeginEdgeOffset: 200,
+	            onInfiniteLoad: this.handleInfiniteLoad
+	          },
+	          this.state.items
+	        )
 	      ),
 	      React.createElement('input', {
 	        name: this.props.name,
@@ -12692,64 +12699,32 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var React = global.React || __webpack_require__(1);
+	var PropTypes = global.PropTypes || __webpack_require__(11);
 
-	__webpack_require__(94);
-	var scaleEnum = __webpack_require__(97);
-	var infiniteHelpers = __webpack_require__(98);
-	var _isFinite = __webpack_require__(103);
+	var window = __webpack_require__(94);
 
-	var preloadType = __webpack_require__(104).preloadType;
-	var checkProps = checkProps = __webpack_require__(105);
+	__webpack_require__(95);
+	var scaleEnum = __webpack_require__(98);
+	var infiniteHelpers = __webpack_require__(99);
+	var _isFinite = __webpack_require__(104);
 
-	var Infinite = React.createClass({
-	  displayName: 'Infinite',
+	var checkProps = __webpack_require__(105);
 
-	  propTypes: {
-	    children: React.PropTypes.any,
+	var Infinite = function (_React$Component) {
+	  _inherits(Infinite, _React$Component);
 
-	    handleScroll: React.PropTypes.func,
-
-	    // preloadBatchSize causes updates only to
-	    // happen each preloadBatchSize pixels of scrolling.
-	    // Set a larger number to cause fewer updates to the
-	    // element list.
-	    preloadBatchSize: preloadType,
-	    // preloadAdditionalHeight determines how much of the
-	    // list above and below the container is preloaded even
-	    // when it is not currently visible to the user. In the
-	    // regular scroll implementation, preloadAdditionalHeight
-	    // is equal to the entire height of the list.
-	    preloadAdditionalHeight: preloadType, // page to screen ratio
-
-	    // The provided elementHeight can be either
-	    //  1. a constant: all elements are the same height
-	    //  2. an array containing the height of each element
-	    elementHeight: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.arrayOf(React.PropTypes.number)]).isRequired,
-	    // This is the total height of the visible window. One
-	    // of
-	    containerHeight: React.PropTypes.number,
-	    useWindowAsScrollContainer: React.PropTypes.bool,
-
-	    displayBottomUpwards: React.PropTypes.bool.isRequired,
-
-	    infiniteLoadBeginEdgeOffset: React.PropTypes.number,
-	    onInfiniteLoad: React.PropTypes.func,
-	    loadingSpinnerDelegate: React.PropTypes.node,
-
-	    isInfiniteLoading: React.PropTypes.bool,
-	    timeScrollStateLastsForAfterUserScrolls: React.PropTypes.number,
-
-	    className: React.PropTypes.string,
-
-	    styles: React.PropTypes.shape({
-	      scrollableStyle: React.PropTypes.object
-	    }).isRequired
-	  },
-	  statics: {
-	    containerHeightScaleFactor: function containerHeightScaleFactor(factor) {
+	  _createClass(Infinite, null, [{
+	    key: 'containerHeightScaleFactor',
+	    value: function containerHeightScaleFactor(factor) {
 	      if (!_isFinite(factor)) {
 	        throw new Error('The scale factor must be a number.');
 	      }
@@ -12758,126 +12733,272 @@ return /******/ (function(modules) { // webpackBootstrap
 	        amount: factor
 	      };
 	    }
-	  },
+	  }]);
 
-	  // Properties currently used but which may be
-	  // refactored away in the future.
-	  computedProps: {},
-	  utils: {},
-	  shouldAttachToBottom: false,
-	  preservedScrollState: 0,
-	  loadingSpinnerHeight: 0,
-	  deprecationWarned: false,
+	  function Infinite(props) {
+	    _classCallCheck(this, Infinite);
 
-	  scrollable: null,
-	  topSpacer: null,
-	  bottomSpacer: null,
-	  smoothScrollingWrapper: null,
-	  loadingSpinner: null,
+	    var _this = _possibleConstructorReturn(this, (Infinite.__proto__ || Object.getPrototypeOf(Infinite)).call(this, props));
 
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      handleScroll: function handleScroll() {},
+	    _initialiseProps.call(_this);
 
-	      useWindowAsScrollContainer: false,
+	    var nextInternalState = _this.recomputeInternalStateFromProps(props);
 
-	      onInfiniteLoad: function onInfiniteLoad() {},
-	      loadingSpinnerDelegate: React.createElement('div', null),
-
-	      displayBottomUpwards: false,
-
-	      isInfiniteLoading: false,
-	      timeScrollStateLastsForAfterUserScrolls: 150,
-
-	      className: '',
-
-	      styles: {}
-	    };
-	  },
-
-	  // automatic adjust to scroll direction
-	  // give spinner a ReactCSSTransitionGroup
-	  getInitialState: function getInitialState() {
-	    var nextInternalState = this.recomputeInternalStateFromProps(this.props);
-
-	    this.computedProps = nextInternalState.computedProps;
-	    this.utils = nextInternalState.utils;
-	    this.shouldAttachToBottom = this.props.displayBottomUpwards;
+	    _this.computedProps = nextInternalState.computedProps;
+	    _this.utils = nextInternalState.utils;
+	    _this.shouldAttachToBottom = props.displayBottomUpwards;
 
 	    var state = nextInternalState.newState;
 	    state.scrollTimeout = undefined;
 	    state.isScrolling = false;
 
-	    return state;
-	  },
+	    _this.state = state;
+	    return _this;
+	  }
 
-	  generateComputedProps: function generateComputedProps(props) {
-	    // These are extracted so their type definitions do not conflict.
-	    var containerHeight = props.containerHeight;
-	    var preloadBatchSize = props.preloadBatchSize;
-	    var preloadAdditionalHeight = props.preloadAdditionalHeight;
+	  // Properties currently used but which may be
+	  // refactored away in the future.
 
-	    var oldProps = _objectWithoutProperties(props, ['containerHeight', 'preloadBatchSize', 'preloadAdditionalHeight']);
 
-	    var newProps = {};
-	    containerHeight = typeof containerHeight === 'number' ? containerHeight : 0;
-	    newProps.containerHeight = props.useWindowAsScrollContainer ? window.innerHeight : containerHeight;
+	  // Refs
 
-	    if (oldProps.infiniteLoadBeginBottomOffset !== undefined) {
-	      newProps.infiniteLoadBeginEdgeOffset = oldProps.infiniteLoadBeginBottomOffset;
-	      if (!this.deprecationWarned) {
-	        console.error('Warning: React Infinite\'s infiniteLoadBeginBottomOffset prop\n        has been deprecated as of 0.6.0. Please use infiniteLoadBeginEdgeOffset.\n        Because this is a rather descriptive name, a simple find and replace\n        should suffice.');
-	        this.deprecationWarned = true;
+
+	  _createClass(Infinite, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var nextInternalState = this.recomputeInternalStateFromProps(nextProps);
+
+	      this.computedProps = nextInternalState.computedProps;
+	      this.utils = nextInternalState.utils;
+
+	      this.setState(nextInternalState.newState);
+	    }
+	  }, {
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate() {
+	      if (this.props.displayBottomUpwards) {
+	        this.preservedScrollState = this.utils.getScrollTop() - this.loadingSpinnerHeight;
 	      }
 	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate(prevProps, prevState) {
+	      this.loadingSpinnerHeight = this.utils.getLoadingSpinnerHeight();
 
-	    var defaultPreloadBatchSizeScaling = {
-	      type: scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR,
-	      amount: 0.5
-	    };
-	    var batchSize = preloadBatchSize && preloadBatchSize.type ? preloadBatchSize : defaultPreloadBatchSizeScaling;
+	      if (!prevProps.useWindowAsScrollContainer && this.props.useWindowAsScrollContainer) {
+	        this.utils.subscribeToScrollListener();
+	      }
 
-	    if (typeof preloadBatchSize === 'number') {
-	      newProps.preloadBatchSize = preloadBatchSize;
-	    } else if (typeof batchSize === 'object' && batchSize.type === scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR) {
-	      newProps.preloadBatchSize = newProps.containerHeight * batchSize.amount;
-	    } else {
-	      newProps.preloadBatchSize = 0;
+	      if (this.props.displayBottomUpwards) {
+	        var lowestScrollTop = this.getLowestPossibleScrollTop();
+	        if (this.shouldAttachToBottom && this.utils.getScrollTop() < lowestScrollTop) {
+	          this.utils.setScrollTop(lowestScrollTop);
+	        } else if (prevProps.isInfiniteLoading && !this.props.isInfiniteLoading) {
+	          this.utils.setScrollTop(this.state.infiniteComputer.getTotalScrollableHeight() - prevState.infiniteComputer.getTotalScrollableHeight() + this.preservedScrollState);
+	        }
+	      }
+
+	      var hasLoadedMoreChildren = this.state.numberOfChildren !== prevState.numberOfChildren;
+	      if (hasLoadedMoreChildren) {
+	        var newApertureState = infiniteHelpers.recomputeApertureStateFromOptionsAndScrollTop(this.state, this.utils.getScrollTop());
+	        this.setState(newApertureState);
+	      }
+
+	      var isMissingVisibleRows = hasLoadedMoreChildren && !this.hasAllVisibleItems() && !this.state.isInfiniteLoading;
+	      if (isMissingVisibleRows) {
+	        this.onInfiniteLoad();
+	      }
 	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.utils.subscribeToScrollListener();
 
-	    var defaultPreloadAdditionalHeightScaling = {
-	      type: scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR,
-	      amount: 1
-	    };
-	    var additionalHeight = preloadAdditionalHeight && preloadAdditionalHeight.type ? preloadAdditionalHeight : defaultPreloadAdditionalHeightScaling;
-	    if (typeof preloadAdditionalHeight === 'number') {
-	      newProps.preloadAdditionalHeight = preloadAdditionalHeight;
-	    } else if (typeof additionalHeight === 'object' && additionalHeight.type === scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR) {
-	      newProps.preloadAdditionalHeight = newProps.containerHeight * additionalHeight.amount;
-	    } else {
-	      newProps.preloadAdditionalHeight = 0;
+	      if (!this.hasAllVisibleItems()) {
+	        this.onInfiniteLoad();
+	      }
+
+	      if (this.props.displayBottomUpwards) {
+	        var lowestScrollTop = this.getLowestPossibleScrollTop();
+	        if (this.shouldAttachToBottom && this.utils.getScrollTop() < lowestScrollTop) {
+	          this.utils.setScrollTop(lowestScrollTop);
+	        }
+	      }
 	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.utils.unsubscribeFromScrollListener();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
 
-	    return Object.assign(oldProps, newProps);
-	  },
+	      var displayables;
+	      if (this.state.numberOfChildren > 1) {
+	        displayables = this.computedProps.children.slice(this.state.displayIndexStart, this.state.displayIndexEnd + 1);
+	      } else {
+	        displayables = this.computedProps.children;
+	      }
 
-	  generateComputedUtilityFunctions: function generateComputedUtilityFunctions(props) {
-	    var _this = this;
+	      var infiniteScrollStyles = {};
+	      if (this.state.isScrolling) {
+	        infiniteScrollStyles.pointerEvents = 'none';
+	      }
 
+	      var topSpacerHeight = this.state.infiniteComputer.getTopSpacerHeight(this.state.displayIndexStart),
+	          bottomSpacerHeight = this.state.infiniteComputer.getBottomSpacerHeight(this.state.displayIndexEnd);
+
+	      // This asymmetry is due to a reluctance to use CSS to control
+	      // the bottom alignment
+	      if (this.computedProps.displayBottomUpwards) {
+	        var heightDifference = this.computedProps.containerHeight - this.state.infiniteComputer.getTotalScrollableHeight();
+	        if (heightDifference > 0) {
+	          topSpacerHeight = heightDifference - this.loadingSpinnerHeight;
+	        }
+	      }
+
+	      var loadingSpinner = this.computedProps.infiniteLoadBeginEdgeOffset === undefined ? null : React.createElement(
+	        'div',
+	        {
+	          ref: function ref(c) {
+	            _this2.loadingSpinner = c;
+	          }
+	        },
+	        this.state.isInfiniteLoading ? this.computedProps.loadingSpinnerDelegate : null
+	      );
+
+	      // topSpacer and bottomSpacer take up the amount of space that the
+	      // rendered elements would have taken up otherwise
+	      return React.createElement(
+	        'div',
+	        {
+	          className: this.computedProps.className,
+	          ref: function ref(c) {
+	            _this2.scrollable = c;
+	          },
+	          style: this.utils.buildScrollableStyle(),
+	          onScroll: this.utils.nodeScrollListener
+	        },
+	        React.createElement(
+	          'div',
+	          {
+	            ref: function ref(c) {
+	              _this2.smoothScrollingWrapper = c;
+	            },
+	            style: infiniteScrollStyles
+	          },
+	          React.createElement('div', {
+	            ref: function ref(c) {
+	              _this2.topSpacer = c;
+	            },
+	            style: infiniteHelpers.buildHeightStyle(topSpacerHeight)
+	          }),
+	          this.computedProps.displayBottomUpwards && loadingSpinner,
+	          displayables,
+	          !this.computedProps.displayBottomUpwards && loadingSpinner,
+	          React.createElement('div', {
+	            ref: function ref(c) {
+	              _this2.bottomSpacer = c;
+	            },
+	            style: infiniteHelpers.buildHeightStyle(bottomSpacerHeight)
+	          })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Infinite;
+	}(React.Component);
+
+	Infinite.propTypes = {
+	  children: PropTypes.any,
+
+	  handleScroll: PropTypes.func,
+
+	  // preloadBatchSize causes updates only to
+	  // happen each preloadBatchSize pixels of scrolling.
+	  // Set a larger number to cause fewer updates to the
+	  // element list.
+	  preloadBatchSize: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+	    type: PropTypes.oneOf(['containerHeightScaleFactor']).isRequired,
+	    amount: PropTypes.number.isRequired
+	  })]),
+	  // preloadAdditionalHeight determines how much of the
+	  // list above and below the container is preloaded even
+	  // when it is not currently visible to the user. In the
+	  // regular scroll implementation, preloadAdditionalHeight
+	  // is equal to the entire height of the list.
+	  preloadAdditionalHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+	    type: PropTypes.oneOf(['containerHeightScaleFactor']).isRequired,
+	    amount: PropTypes.number.isRequired
+	  })]), // page to screen ratio
+
+	  // The provided elementHeight can be either
+	  //  1. a constant: all elements are the same height
+	  //  2. an array containing the height of each element
+	  elementHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).isRequired,
+	  // This is the total height of the visible window. One
+	  // of
+	  containerHeight: PropTypes.number,
+	  useWindowAsScrollContainer: PropTypes.bool,
+
+	  displayBottomUpwards: PropTypes.bool.isRequired,
+
+	  infiniteLoadBeginEdgeOffset: PropTypes.number,
+	  onInfiniteLoad: PropTypes.func,
+	  loadingSpinnerDelegate: PropTypes.node,
+
+	  isInfiniteLoading: PropTypes.bool,
+	  timeScrollStateLastsForAfterUserScrolls: PropTypes.number,
+
+	  className: PropTypes.string,
+
+	  styles: PropTypes.shape({
+	    scrollableStyle: PropTypes.object
+	  }).isRequired
+	};
+	Infinite.defaultProps = {
+	  handleScroll: function handleScroll() {},
+
+	  useWindowAsScrollContainer: false,
+
+	  onInfiniteLoad: function onInfiniteLoad() {},
+	  loadingSpinnerDelegate: React.createElement('div', null),
+
+	  displayBottomUpwards: false,
+
+	  isInfiniteLoading: false,
+	  timeScrollStateLastsForAfterUserScrolls: 150,
+
+	  className: '',
+
+	  styles: {}
+	};
+
+	var _initialiseProps = function _initialiseProps() {
+	  var _this3 = this;
+
+	  this.shouldAttachToBottom = false;
+	  this.preservedScrollState = 0;
+	  this.loadingSpinnerHeight = 0;
+
+	  this.generateComputedUtilityFunctions = function (props) {
 	    var utilities = {};
 	    utilities.getLoadingSpinnerHeight = function () {
 	      var loadingSpinnerHeight = 0;
-	      if (_this.loadingSpinner) {
-	        loadingSpinnerHeight = _this.loadingSpinner.offsetHeight || 0;
+	      if (_this3.loadingSpinner) {
+	        loadingSpinnerHeight = _this3.loadingSpinner.offsetHeight || 0;
 	      }
 	      return loadingSpinnerHeight;
 	    };
 	    if (props.useWindowAsScrollContainer) {
 	      utilities.subscribeToScrollListener = function () {
-	        window.addEventListener('scroll', _this.infiniteHandleScroll);
+	        window.addEventListener('scroll', _this3.infiniteHandleScroll);
 	      };
 	      utilities.unsubscribeFromScrollListener = function () {
-	        window.removeEventListener('scroll', _this.infiniteHandleScroll);
+	        window.removeEventListener('scroll', _this3.infiniteHandleScroll);
 	      };
 	      utilities.nodeScrollListener = function () {};
 	      utilities.getScrollTop = function () {
@@ -12895,41 +13016,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else {
 	      utilities.subscribeToScrollListener = function () {};
 	      utilities.unsubscribeFromScrollListener = function () {};
-	      utilities.nodeScrollListener = this.infiniteHandleScroll;
+	      utilities.nodeScrollListener = _this3.infiniteHandleScroll;
 	      utilities.getScrollTop = function () {
-	        return _this.scrollable ? _this.scrollable.scrollTop : 0;
+	        return _this3.scrollable ? _this3.scrollable.scrollTop : 0;
 	      };
 
 	      utilities.setScrollTop = function (top) {
-	        if (_this.scrollable) {
-	          _this.scrollable.scrollTop = top;
+	        if (_this3.scrollable) {
+	          _this3.scrollable.scrollTop = top;
 	        }
 	      };
 	      utilities.scrollShouldBeIgnored = function (event) {
-	        return event.target !== _this.scrollable;
+	        return event.target !== _this3.scrollable;
 	      };
 
 	      utilities.buildScrollableStyle = function () {
 	        return Object.assign({}, {
-	          height: _this.computedProps.containerHeight,
+	          height: _this3.computedProps.containerHeight,
 	          overflowX: 'hidden',
 	          overflowY: 'scroll',
 	          WebkitOverflowScrolling: 'touch'
-	        }, _this.computedProps.styles.scrollableStyle || {});
+	        }, _this3.computedProps.styles.scrollableStyle || {});
 	      };
 	    }
 	    return utilities;
-	  },
+	  };
 
-	  recomputeInternalStateFromProps: function recomputeInternalStateFromProps(props) {
+	  this.recomputeInternalStateFromProps = function (props) {
 	    checkProps(props);
-	    var computedProps = this.generateComputedProps(props);
-	    var utils = this.generateComputedUtilityFunctions(props);
+	    var computedProps = infiniteHelpers.generateComputedProps(props);
+	    var utils = _this3.generateComputedUtilityFunctions(props);
 
 	    var newState = {};
 
 	    newState.numberOfChildren = React.Children.count(computedProps.children);
-	    newState.infiniteComputer = infiniteHelpers.createInfiniteComputer(computedProps.elementHeight, computedProps.children, computedProps.displayBottomUpwards);
+	    newState.infiniteComputer = infiniteHelpers.createInfiniteComputer(computedProps.elementHeight, computedProps.children);
 
 	    if (computedProps.isInfiniteLoading !== undefined) {
 	      newState.isInfiniteLoading = computedProps.isInfiniteLoading;
@@ -12945,204 +13066,79 @@ return /******/ (function(modules) { // webpackBootstrap
 	      utils: utils,
 	      newState: newState
 	    };
-	  },
+	  };
 
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    var nextInternalState = this.recomputeInternalStateFromProps(nextProps);
-
-	    this.computedProps = nextInternalState.computedProps;
-	    this.utils = nextInternalState.utils;
-
-	    this.setState(nextInternalState.newState);
-	  },
-
-	  componentWillUpdate: function componentWillUpdate() {
-	    if (this.props.displayBottomUpwards) {
-	      this.preservedScrollState = this.utils.getScrollTop() - this.loadingSpinnerHeight;
-	    }
-	  },
-
-	  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
-	    this.loadingSpinnerHeight = this.utils.getLoadingSpinnerHeight();
-
-	    if (this.props.displayBottomUpwards) {
-	      var lowestScrollTop = this.getLowestPossibleScrollTop();
-	      if (this.shouldAttachToBottom && this.utils.getScrollTop() < lowestScrollTop) {
-	        this.utils.setScrollTop(lowestScrollTop);
-	      } else if (prevProps.isInfiniteLoading && !this.props.isInfiniteLoading) {
-	        this.utils.setScrollTop(this.state.infiniteComputer.getTotalScrollableHeight() - prevState.infiniteComputer.getTotalScrollableHeight() + this.preservedScrollState);
-	      }
-	    }
-
-	    var hasLoadedMoreChildren = this.state.numberOfChildren !== prevState.numberOfChildren;
-	    if (hasLoadedMoreChildren) {
-	      var newApertureState = infiniteHelpers.recomputeApertureStateFromOptionsAndScrollTop(this.state, this.utils.getScrollTop());
-	      this.setState(newApertureState);
-	    }
-
-	    var isMissingVisibleRows = hasLoadedMoreChildren && !this.hasAllVisibleItems() && !this.state.isInfiniteLoading;
-	    if (isMissingVisibleRows) {
-	      this.onInfiniteLoad();
-	    }
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    this.utils.subscribeToScrollListener();
-
-	    if (!this.hasAllVisibleItems()) {
-	      this.onInfiniteLoad();
-	    }
-
-	    if (this.props.displayBottomUpwards) {
-	      var lowestScrollTop = this.getLowestPossibleScrollTop();
-	      if (this.shouldAttachToBottom && this.utils.getScrollTop() < lowestScrollTop) {
-	        this.utils.setScrollTop(lowestScrollTop);
-	      }
-	    }
-	  },
-
-	  componentWillUnmount: function componentWillUnmount() {
-	    this.utils.unsubscribeFromScrollListener();
-	  },
-
-	  infiniteHandleScroll: function infiniteHandleScroll(e) {
-	    if (this.utils.scrollShouldBeIgnored(e)) {
+	  this.infiniteHandleScroll = function (e) {
+	    if (_this3.utils.scrollShouldBeIgnored(e)) {
 	      return;
 	    }
-	    this.computedProps.handleScroll(this.scrollable);
-	    this.handleScroll(this.utils.getScrollTop());
-	  },
+	    _this3.computedProps.handleScroll(_this3.scrollable);
+	    _this3.handleScroll(_this3.utils.getScrollTop());
+	  };
 
-	  manageScrollTimeouts: function manageScrollTimeouts() {
+	  this.manageScrollTimeouts = function () {
 	    // Maintains a series of timeouts to set this.state.isScrolling
 	    // to be true when the element is scrolling.
 
-	    if (this.state.scrollTimeout) {
-	      clearTimeout(this.state.scrollTimeout);
+	    if (_this3.state.scrollTimeout) {
+	      clearTimeout(_this3.state.scrollTimeout);
 	    }
 
-	    var that = this,
+	    var that = _this3,
 	        scrollTimeout = setTimeout(function () {
 	      that.setState({
 	        isScrolling: false,
 	        scrollTimeout: undefined
 	      });
-	    }, this.computedProps.timeScrollStateLastsForAfterUserScrolls);
+	    }, _this3.computedProps.timeScrollStateLastsForAfterUserScrolls);
 
-	    this.setState({
+	    _this3.setState({
 	      isScrolling: true,
 	      scrollTimeout: scrollTimeout
 	    });
-	  },
+	  };
 
-	  getLowestPossibleScrollTop: function getLowestPossibleScrollTop() {
-	    return this.state.infiniteComputer.getTotalScrollableHeight() - this.computedProps.containerHeight;
-	  },
+	  this.getLowestPossibleScrollTop = function () {
+	    return _this3.state.infiniteComputer.getTotalScrollableHeight() - _this3.computedProps.containerHeight;
+	  };
 
-	  hasAllVisibleItems: function hasAllVisibleItems() {
-	    return !(_isFinite(this.computedProps.infiniteLoadBeginEdgeOffset) && this.state.infiniteComputer.getTotalScrollableHeight() < this.computedProps.containerHeight);
-	  },
+	  this.hasAllVisibleItems = function () {
+	    return !(_isFinite(_this3.computedProps.infiniteLoadBeginEdgeOffset) && _this3.state.infiniteComputer.getTotalScrollableHeight() < _this3.computedProps.containerHeight);
+	  };
 
-	  passedEdgeForInfiniteScroll: function passedEdgeForInfiniteScroll(scrollTop) {
-	    if (this.computedProps.displayBottomUpwards) {
-	      return !this.shouldAttachToBottom && scrollTop < this.computedProps.infiniteLoadBeginEdgeOffset;
+	  this.passedEdgeForInfiniteScroll = function (scrollTop) {
+	    var edgeOffset = _this3.computedProps.infiniteLoadBeginEdgeOffset;
+	    if (typeof edgeOffset !== 'number') {
+	      return false;
+	    }
+
+	    if (_this3.computedProps.displayBottomUpwards) {
+	      return !_this3.shouldAttachToBottom && scrollTop < edgeOffset;
 	    } else {
-	      return scrollTop > this.state.infiniteComputer.getTotalScrollableHeight() - this.computedProps.containerHeight - this.computedProps.infiniteLoadBeginEdgeOffset;
+	      return scrollTop > _this3.state.infiniteComputer.getTotalScrollableHeight() - _this3.computedProps.containerHeight - edgeOffset;
 	    }
-	  },
+	  };
 
-	  onInfiniteLoad: function onInfiniteLoad() {
-	    this.setState({ isInfiniteLoading: true });
-	    this.computedProps.onInfiniteLoad();
-	  },
+	  this.onInfiniteLoad = function () {
+	    _this3.setState({ isInfiniteLoading: true });
+	    _this3.computedProps.onInfiniteLoad();
+	  };
 
-	  handleScroll: function handleScroll(scrollTop) {
-	    this.shouldAttachToBottom = this.computedProps.displayBottomUpwards && scrollTop >= this.getLowestPossibleScrollTop();
+	  this.handleScroll = function (scrollTop) {
+	    _this3.shouldAttachToBottom = _this3.computedProps.displayBottomUpwards && scrollTop >= _this3.getLowestPossibleScrollTop();
 
-	    this.manageScrollTimeouts();
+	    _this3.manageScrollTimeouts();
 
-	    var newApertureState = infiniteHelpers.recomputeApertureStateFromOptionsAndScrollTop(this.state, scrollTop);
+	    var newApertureState = infiniteHelpers.recomputeApertureStateFromOptionsAndScrollTop(_this3.state, scrollTop);
 
-	    if (this.passedEdgeForInfiniteScroll(scrollTop) && !this.state.isInfiniteLoading) {
-	      this.setState(Object.assign({}, newApertureState));
-	      this.onInfiniteLoad();
+	    if (_this3.passedEdgeForInfiniteScroll(scrollTop) && !_this3.state.isInfiniteLoading) {
+	      _this3.setState(Object.assign({}, newApertureState));
+	      _this3.onInfiniteLoad();
 	    } else {
-	      this.setState(newApertureState);
+	      _this3.setState(newApertureState);
 	    }
-	  },
-
-	  buildHeightStyle: function buildHeightStyle(height) {
-	    return {
-	      width: '100%',
-	      height: Math.ceil(height)
-	    };
-	  },
-
-	  render: function render() {
-	    var _this2 = this;
-
-	    var displayables;
-	    if (this.state.numberOfChildren > 1) {
-	      displayables = this.computedProps.children.slice(this.state.displayIndexStart, this.state.displayIndexEnd + 1);
-	    } else {
-	      displayables = this.computedProps.children;
-	    }
-
-	    var infiniteScrollStyles = {};
-	    if (this.state.isScrolling) {
-	      infiniteScrollStyles.pointerEvents = 'none';
-	    }
-
-	    var topSpacerHeight = this.state.infiniteComputer.getTopSpacerHeight(this.state.displayIndexStart),
-	        bottomSpacerHeight = this.state.infiniteComputer.getBottomSpacerHeight(this.state.displayIndexEnd);
-
-	    // This asymmetry is due to a reluctance to use CSS to control
-	    // the bottom alignment
-	    if (this.computedProps.displayBottomUpwards) {
-	      var heightDifference = this.computedProps.containerHeight - this.state.infiniteComputer.getTotalScrollableHeight();
-	      if (heightDifference > 0) {
-	        topSpacerHeight = heightDifference - this.loadingSpinnerHeight;
-	      }
-	    }
-
-	    var loadingSpinner = this.computedProps.infiniteLoadBeginEdgeOffset === undefined ? null : React.createElement(
-	      'div',
-	      { ref: function (c) {
-	          _this2.loadingSpinner = c;
-	        } },
-	      this.state.isInfiniteLoading ? this.computedProps.loadingSpinnerDelegate : null
-	    );
-
-	    // topSpacer and bottomSpacer take up the amount of space that the
-	    // rendered elements would have taken up otherwise
-	    return React.createElement(
-	      'div',
-	      { className: this.computedProps.className,
-	        ref: function (c) {
-	          _this2.scrollable = c;
-	        },
-	        style: this.utils.buildScrollableStyle(),
-	        onScroll: this.utils.nodeScrollListener },
-	      React.createElement(
-	        'div',
-	        { ref: function (c) {
-	            _this2.smoothScrollingWrapper = c;
-	          }, style: infiniteScrollStyles },
-	        React.createElement('div', { ref: function (c) {
-	            _this2.topSpacer = c;
-	          },
-	          style: this.buildHeightStyle(topSpacerHeight) }),
-	        this.computedProps.displayBottomUpwards && loadingSpinner,
-	        displayables,
-	        !this.computedProps.displayBottomUpwards && loadingSpinner,
-	        React.createElement('div', { ref: function (c) {
-	            _this2.bottomSpacer = c;
-	          },
-	          style: this.buildHeightStyle(bottomSpacerHeight) })
-	      )
-	    );
-	  }
-	});
+	  };
+	};
 
 	module.exports = Infinite;
 	global.Infinite = Infinite;
@@ -13150,7 +13146,30 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 94 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+
+	var win;
+
+	if (typeof window !== 'undefined') {
+	  win = window;
+	} else if (typeof global !== 'undefined') {
+	  win = global;
+	} else if (typeof self !== 'undefined') {
+	  win = self;
+	} else {
+	  win = {};
+	}
+
+	module.exports = win;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 
 	/*
 	  A number of polyfills for native functions are consolidated
@@ -13159,18 +13178,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  with these native functions.
 	 */
 
-	'use strict';
-
 	if (!Object.assign) {
-	  Object.assign = __webpack_require__(95);
+	  Object.assign = __webpack_require__(96);
 	}
 
 	if (!Array.isArray) {
-	  Array.isArray = __webpack_require__(96);
+	  Array.isArray = __webpack_require__(97);
 	}
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -13215,7 +13232,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports) {
 
 	/**
@@ -13401,7 +13418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13411,14 +13428,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
-	var ConstantInfiniteComputer = __webpack_require__(99);
-	var ArrayInfiniteComputer = __webpack_require__(101);
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var ConstantInfiniteComputer = __webpack_require__(100);
+	var ArrayInfiniteComputer = __webpack_require__(102);
+	var scaleEnum = __webpack_require__(98);
 	var React = global.React || __webpack_require__(1);
+	var window = __webpack_require__(94);
 
 	function createInfiniteComputer(data, children) {
 	  var computer;
@@ -13439,52 +13462,106 @@ return /******/ (function(modules) { // webpackBootstrap
 	// The window is the block with any preloadAdditionalHeight
 	// added to it.
 	function recomputeApertureStateFromOptionsAndScrollTop(_ref, scrollTop) {
-	  var preloadBatchSize = _ref.preloadBatchSize;
-	  var preloadAdditionalHeight = _ref.preloadAdditionalHeight;
-	  var infiniteComputer = _ref.infiniteComputer;
-	  return (function () {
-	    var blockNumber = preloadBatchSize === 0 ? 0 : Math.floor(scrollTop / preloadBatchSize),
-	        blockStart = preloadBatchSize * blockNumber,
-	        blockEnd = blockStart + preloadBatchSize,
-	        apertureTop = Math.max(0, blockStart - preloadAdditionalHeight),
-	        apertureBottom = Math.min(infiniteComputer.getTotalScrollableHeight(), blockEnd + preloadAdditionalHeight);
+	  var preloadBatchSize = _ref.preloadBatchSize,
+	      preloadAdditionalHeight = _ref.preloadAdditionalHeight,
+	      infiniteComputer = _ref.infiniteComputer;
 
-	    return {
-	      displayIndexStart: infiniteComputer.getDisplayIndexStart(apertureTop),
-	      displayIndexEnd: infiniteComputer.getDisplayIndexEnd(apertureBottom)
-	    };
-	  })();
+	  var blockNumber = preloadBatchSize === 0 ? 0 : Math.floor(scrollTop / preloadBatchSize),
+	      blockStart = preloadBatchSize * blockNumber,
+	      blockEnd = blockStart + preloadBatchSize,
+	      apertureTop = Math.max(0, blockStart - preloadAdditionalHeight),
+	      apertureBottom = Math.min(infiniteComputer.getTotalScrollableHeight(), blockEnd + preloadAdditionalHeight);
+
+	  return {
+	    displayIndexStart: infiniteComputer.getDisplayIndexStart(apertureTop),
+	    displayIndexEnd: infiniteComputer.getDisplayIndexEnd(apertureBottom)
+	  };
+	}
+
+	function generateComputedProps(props) {
+	  // These are extracted so their type definitions do not conflict.
+	  var containerHeight = props.containerHeight,
+	      preloadBatchSize = props.preloadBatchSize,
+	      preloadAdditionalHeight = props.preloadAdditionalHeight,
+	      handleScroll = props.handleScroll,
+	      onInfiniteLoad = props.onInfiniteLoad,
+	      oldProps = _objectWithoutProperties(props, ['containerHeight', 'preloadBatchSize', 'preloadAdditionalHeight', 'handleScroll', 'onInfiniteLoad']);
+
+	  var newProps = {};
+	  containerHeight = typeof containerHeight === 'number' ? containerHeight : 0;
+	  newProps.containerHeight = props.useWindowAsScrollContainer ? window.innerHeight : containerHeight;
+
+	  newProps.handleScroll = handleScroll || function () {};
+	  newProps.onInfiniteLoad = onInfiniteLoad || function () {};
+
+	  var defaultPreloadBatchSizeScaling = {
+	    type: scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR,
+	    amount: 0.5
+	  };
+	  var batchSize = preloadBatchSize && preloadBatchSize.type ? preloadBatchSize : defaultPreloadBatchSizeScaling;
+
+	  if (typeof preloadBatchSize === 'number') {
+	    newProps.preloadBatchSize = preloadBatchSize;
+	  } else if ((typeof batchSize === 'undefined' ? 'undefined' : _typeof(batchSize)) === 'object' && batchSize.type === scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR) {
+	    newProps.preloadBatchSize = newProps.containerHeight * batchSize.amount;
+	  } else {
+	    newProps.preloadBatchSize = 0;
+	  }
+
+	  var defaultPreloadAdditionalHeightScaling = {
+	    type: scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR,
+	    amount: 1
+	  };
+	  var additionalHeight = preloadAdditionalHeight && preloadAdditionalHeight.type ? preloadAdditionalHeight : defaultPreloadAdditionalHeightScaling;
+	  if (typeof preloadAdditionalHeight === 'number') {
+	    newProps.preloadAdditionalHeight = preloadAdditionalHeight;
+	  } else if ((typeof additionalHeight === 'undefined' ? 'undefined' : _typeof(additionalHeight)) === 'object' && additionalHeight.type === scaleEnum.CONTAINER_HEIGHT_SCALE_FACTOR) {
+	    newProps.preloadAdditionalHeight = newProps.containerHeight * additionalHeight.amount;
+	  } else {
+	    newProps.preloadAdditionalHeight = 0;
+	  }
+
+	  return Object.assign(oldProps, newProps);
+	}
+
+	function buildHeightStyle(height) {
+	  return {
+	    width: '100%',
+	    height: Math.ceil(height)
+	  };
 	}
 
 	module.exports = {
 	  createInfiniteComputer: createInfiniteComputer,
-	  recomputeApertureStateFromOptionsAndScrollTop: recomputeApertureStateFromOptionsAndScrollTop
+	  recomputeApertureStateFromOptionsAndScrollTop: recomputeApertureStateFromOptionsAndScrollTop,
+	  generateComputedProps: generateComputedProps,
+	  buildHeightStyle: buildHeightStyle
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var InfiniteComputer = __webpack_require__(100);
+	var InfiniteComputer = __webpack_require__(101);
 
-	var ConstantInfiniteComputer = (function (_InfiniteComputer) {
+	var ConstantInfiniteComputer = function (_InfiniteComputer) {
 	  _inherits(ConstantInfiniteComputer, _InfiniteComputer);
 
 	  function ConstantInfiniteComputer() {
 	    _classCallCheck(this, ConstantInfiniteComputer);
 
-	    _get(Object.getPrototypeOf(ConstantInfiniteComputer.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, (ConstantInfiniteComputer.__proto__ || Object.getPrototypeOf(ConstantInfiniteComputer)).apply(this, arguments));
 	  }
 
 	  _createClass(ConstantInfiniteComputer, [{
@@ -13520,26 +13597,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return ConstantInfiniteComputer;
-	})(InfiniteComputer);
+	}(InfiniteComputer);
 
 	module.exports = ConstantInfiniteComputer;
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {// An infinite computer must be able to do the following things:
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	// An infinite computer must be able to do the following things:
 	//  1. getTotalScrollableHeight()
 	//  2. getDisplayIndexStart()
 	//  3. getDisplayIndexEnd()
 
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	var InfiniteComputer = (function () {
+	var InfiniteComputer = function () {
 	  function InfiniteComputer(heightData, numberOfChildren) {
 	    _classCallCheck(this, InfiniteComputer);
 
@@ -13556,6 +13633,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /* eslint-disable no-unused-vars */
+
 	  }, {
 	    key: 'getDisplayIndexStart',
 	    value: function getDisplayIndexStart(windowTop) {
@@ -13566,6 +13644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /* eslint-disable no-unused-vars */
+
 	  }, {
 	    key: 'getDisplayIndexEnd',
 	    value: function getDisplayIndexEnd(windowBottom) {
@@ -13578,6 +13657,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // These are helper methods, and can be calculated from
 	    // the above details.
 	    /* eslint-disable no-unused-vars */
+
 	  }, {
 	    key: 'getTopSpacerHeight',
 	    value: function getTopSpacerHeight(displayIndexStart) {
@@ -13588,6 +13668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /* eslint-disable no-unused-vars */
+
 	  }, {
 	    key: 'getBottomSpacerHeight',
 	    value: function getBottomSpacerHeight(displayIndexEnd) {
@@ -13599,36 +13680,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return InfiniteComputer;
-	})();
+	}();
 
 	module.exports = InfiniteComputer;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var InfiniteComputer = __webpack_require__(100),
-	    bs = __webpack_require__(102);
+	var InfiniteComputer = __webpack_require__(101),
+	    bs = __webpack_require__(103);
 
-	var ArrayInfiniteComputer = (function (_InfiniteComputer) {
+	var ArrayInfiniteComputer = function (_InfiniteComputer) {
 	  _inherits(ArrayInfiniteComputer, _InfiniteComputer);
 
 	  function ArrayInfiniteComputer(heightData, numberOfChildren) {
 	    _classCallCheck(this, ArrayInfiniteComputer);
 
-	    _get(Object.getPrototypeOf(ArrayInfiniteComputer.prototype), 'constructor', this).call(this, heightData, numberOfChildren);
-	    this.prefixHeightData = this.heightData.reduce(function (acc, next) {
+	    var _this = _possibleConstructorReturn(this, (ArrayInfiniteComputer.__proto__ || Object.getPrototypeOf(ArrayInfiniteComputer)).call(this, heightData, numberOfChildren));
+
+	    _this.prefixHeightData = _this.heightData.reduce(function (acc, next) {
 	      if (acc.length === 0) {
 	        return [next];
 	      } else {
@@ -13636,6 +13718,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return acc;
 	      }
 	    }, []);
+	    return _this;
 	  }
 
 	  _createClass(ArrayInfiniteComputer, [{
@@ -13682,12 +13765,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return ArrayInfiniteComputer;
-	})(InfiniteComputer);
+	}(InfiniteComputer);
 
 	module.exports = ArrayInfiniteComputer;
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13697,9 +13780,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  CLOSEST_HIGHER: 2
 	};
 
-	var binaryIndexSearch = function binaryIndexSearch(array, /* : Array<number> */
-	item, /* : number */
-	opt /* : number */) /* : ?number */{
+	var binaryIndexSearch = function binaryIndexSearch(array /* : Array<number> */
+	, item /* : number */
+	, opt /* : number */
+	) /* : ?number */{
 	  var index;
 
 	  var high = array.length - 1,
@@ -13735,7 +13819,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -13786,33 +13870,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
-	var React = global.React || __webpack_require__(1);
-
-	module.exports = {
-	  preloadType: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.shape({
-	    type: React.PropTypes.oneOf(['containerHeightScaleFactor']).isRequired,
-	    amount: React.PropTypes.number.isRequired
-	  })])
-	};
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 105 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {// This module provides a centralized place for
+	// This module provides a centralized place for
 	// runtime checking that the props passed to React Infinite
 	// make the minimum amount of sense.
 
-	'use strict';
-
 	var React = global.React || __webpack_require__(1);
-	var _isFinite = __webpack_require__(103);
+	var _isFinite = __webpack_require__(104);
 
 	module.exports = function (props) {
 	  var rie = 'Invariant Violation: ';
@@ -16928,7 +16996,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'slider',
+	      classprefix: 'slider',
 	      theme: 'default',
 	      directionNav: true,
 	      controlNav: true,
@@ -17306,7 +17374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    media: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	    top: PropTypes.number,
 	    animation: PropTypes.string,
@@ -17315,7 +17383,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'sticky',
+	      classprefix: 'sticky',
 	      top: 0
 	    };
 	  },
@@ -17504,7 +17572,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'accordion',
+	      classprefix: 'accordion',
 	      theme: 'default'
 	    };
 	  },
@@ -17535,7 +17603,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'section',
 	      _extends({}, this.props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(classSet, this.props.className)
 	      }),
 	      this.props.data.map(function (item, index) {
@@ -17630,12 +17698,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  propTypes: {
 	    theme: PropTypes.oneOf(['default', 'dotted', 'dashed']),
-	    classPrefix: PropTypes.string
+	    classprefix: PropTypes.string
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'divider',
+	      classprefix: 'divider',
 	      theme: 'default'
 	    };
 	  },
@@ -17644,7 +17712,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var classSet = this.getClassSet();
 
 	    return React.createElement('hr', _extends({}, this.props, {
-	      'data-am-widget': this.props.classPrefix,
+	      'data-am-widget': this.props.classprefix,
 	      className: classNames(this.props.className, classSet)
 	    }));
 	  }
@@ -17671,7 +17739,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  propTypes: {
 	    theme: PropTypes.oneOf(['default']),
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    mobileTitle: PropTypes.string,
 	    mobileLink: PropTypes.string,
 	    desktopTitle: PropTypes.string,
@@ -17683,7 +17751,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'footer',
+	      classprefix: 'footer',
 	      theme: 'default',
 	      mobileTitle: '适配版',
 	      desktopTitle: '电脑版'
@@ -17697,7 +17765,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'footer',
 	      _extends({}, this.props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      React.createElement(
@@ -17766,7 +17834,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default', 'overlay', 'bordered', 'imgbordered']),
 	    data: PropTypes.array,
 	    sm: PropTypes.number,
@@ -17776,7 +17844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'gallery',
+	      classprefix: 'gallery',
 	      theme: 'default',
 	      data: []
 	    };
@@ -17823,7 +17891,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  render: function render() {
 	    var classSet = this.getClassSet();
-	    var props = omit(this.props, ['classPrefix', 'data', 'theme']);
+	    var props = omit(this.props, ['classprefix', 'data', 'theme']);
 
 	    return React.createElement(
 	      AvgGrid,
@@ -17831,7 +17899,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        sm: this.props.sm || 2,
 	        md: this.props.md || 3,
 	        lg: this.props.lg || 4,
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      this.props.data.map(function (item, i) {
@@ -17872,7 +17940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin, SmoothScrollMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string.isRequired,
+	    classprefix: PropTypes.string.isRequired,
 	    theme: PropTypes.oneOf(['default', 'fixed']),
 	    title: PropTypes.string,
 	    src: PropTypes.string,
@@ -17882,7 +17950,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'gotop',
+	      classprefix: 'gotop',
 	      theme: 'default'
 	    };
 	  },
@@ -17936,7 +18004,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'div',
 	      _extends({}, this.props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(classSet, this.props.className)
 	      }),
 	      React.createElement(
@@ -17979,7 +18047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default']),
 	    data: PropTypes.object,
 	    fixed: PropTypes.bool,
@@ -17990,7 +18058,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'header',
+	      classprefix: 'header',
 	      theme: 'default',
 	      onSelect: function onSelect() {}
 	    };
@@ -18057,7 +18125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'header',
 	      _extends({}, omit(this.props, ['data', 'title']), {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      this.renderNav('left'),
@@ -18089,7 +18157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default']),
 	    data: PropTypes.object,
 	    header: PropTypes.node,
@@ -18101,7 +18169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'list-news',
+	      classprefix: 'list-news',
 	      theme: 'default',
 	      moreText: '\u66F4\u591A \xBB'
 	    };
@@ -18289,7 +18357,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'div',
 	      _extends({}, this.props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      this.props.header || this.renderHeader(),
@@ -18322,7 +18390,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default', 'dropdown1', 'dropdown2', 'slide1', 'stack']),
 	    data: PropTypes.array,
 	    onSelect: PropTypes.func,
@@ -18334,7 +18402,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'menu',
+	      classprefix: 'menu',
 	      theme: 'default',
 	      data: [],
 	      onSelect: function onSelect() {}
@@ -18482,7 +18550,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'nav',
 	      _extends({}, props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      this.renderMenuToggle(),
@@ -18520,7 +18588,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default']),
 	    data: PropTypes.array,
 	    onSelect: PropTypes.func
@@ -18528,7 +18596,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'navbar',
+	      classprefix: 'navbar',
 	      theme: 'default',
 	      data: [],
 	      onSelect: function onSelect() {}
@@ -18542,7 +18610,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createElement(
 	      'div',
 	      _extends({}, props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        cf: true,
 	        className: classNames(this.props.className, classSet)
 	      }),
@@ -18603,7 +18671,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [ClassNameMixin],
 
 	  propTypes: {
-	    classPrefix: PropTypes.string,
+	    classprefix: PropTypes.string,
 	    theme: PropTypes.oneOf(['default', 'multi', 'cols']),
 	    nav: PropTypes.array,
 	    title: PropTypes.node
@@ -18611,7 +18679,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      classPrefix: 'titlebar',
+	      classprefix: 'titlebar',
 	      theme: 'default',
 	      data: []
 	    };
@@ -18619,12 +18687,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  render: function render() {
 	    var classSet = this.getClassSet();
-	    var props = omit(this.props, ['classPrefix', 'nav', 'theme']);
+	    var props = omit(this.props, ['classprefix', 'nav', 'theme']);
 
 	    return React.createElement(
 	      'div',
 	      _extends({}, props, {
-	        'data-am-widget': this.props.classPrefix,
+	        'data-am-widget': this.props.classprefix,
 	        className: classNames(this.props.className, classSet)
 	      }),
 	      React.createElement(

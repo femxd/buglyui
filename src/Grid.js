@@ -10,7 +10,7 @@ var Grid = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     component: PropTypes.node.isRequired,
     collapse: PropTypes.bool,
     fixed: PropTypes.bool
@@ -18,7 +18,7 @@ var Grid = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'g',
+      classprefix: 'g',
       component: 'div'
     };
   },

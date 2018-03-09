@@ -10,14 +10,14 @@ var Form = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     horizontal: PropTypes.bool,
     inline: PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'form'
+      classprefix: 'form'
     };
   },
 

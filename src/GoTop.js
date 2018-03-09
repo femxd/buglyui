@@ -17,7 +17,7 @@ var GoTop = createReactClass({
   mixins: [ClassNameMixin, SmoothScrollMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     theme: PropTypes.oneOf(['default', 'fixed']),
     title: PropTypes.string,
     src: PropTypes.string,
@@ -27,7 +27,7 @@ var GoTop = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'gotop',
+      classprefix: 'gotop',
       theme: 'default'
     };
   },
@@ -85,7 +85,7 @@ var GoTop = createReactClass({
     return (
       <div
         {...this.props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(classSet, this.props.className)}
       >
         <a

@@ -24,7 +24,7 @@ var Tabs = createReactClass({
 
   getDefaultProps: function () {
     return {
-      classPrefix: 'tabs',
+      classprefix: 'tabs',
       animation: 'fade'
     };
   },
@@ -176,7 +176,7 @@ var Tabs = createReactClass({
     return (
       <div
         {...props}
-        data-am-widget={this.props.theme ? this.props.classPrefix : null}
+        data-am-widget={this.props.theme ? this.props.classprefix : null}
         className={classNames(classSet, this.props.className) }
         >
         {children}

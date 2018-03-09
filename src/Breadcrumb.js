@@ -17,7 +17,7 @@ var Breadcrumb = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'breadcrumb',
+      classprefix: 'breadcrumb',
       component: 'ul'
     };
   },

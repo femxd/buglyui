@@ -10,26 +10,26 @@ var Popover = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-    positionLeft: PropTypes.number,
-    positionTop: PropTypes.number,
-    amSize: PropTypes.oneOf(['sm', 'lg']),
-    amStyle: PropTypes.string,
-    disableCaret: PropTypes.bool
+    positionleft: PropTypes.number,
+    positiontop: PropTypes.number,
+    amsize: PropTypes.oneOf(['sm', 'lg']),
+    amstyle: PropTypes.string,
+    disablecaret: PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'popover'
+      classprefix: 'popover'
     };
   },
 
   render: function() {
     var classSet = this.getClassSet();
     var style = {
-      left: this.props.positionLeft,
-      top: this.props.positionTop,
+      left: this.props.positionleft,
+      top: this.props.positiontop,
       display: 'block'
     };
 
@@ -45,7 +45,7 @@ var Popover = createReactClass({
         <div className={this.prefixClass('inner')}>
           {this.props.children}
         </div>
-        {!this.props.disableCaret && <div className={this.prefixClass('caret')}></div>}
+        {!this.props.disablecaret && <div className={this.prefixClass('caret')}></div>}
       </div>
     );
   }

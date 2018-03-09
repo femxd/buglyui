@@ -15,7 +15,7 @@ var InfiniteSelected = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     data: PropTypes.array.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.string,
@@ -39,7 +39,7 @@ var InfiniteSelected = createReactClass({
   getDefaultProps: function () {
     return {
       sortSelected: true,
-      classPrefix: 'selected',
+      classprefix: 'selected',
       placeholder: '点击选择...',
       onChange: function () { },
       onValidateValue: function (value) { return true },
@@ -101,7 +101,7 @@ var InfiniteSelected = createReactClass({
     var groupHeader;
     var items = [];
     var temp = new Date().getTime();
-    data.slice(start, end).forEach(function (option, i) {
+    data && data.slice(start, end).forEach(function (option, i) {
       var checked = this.hasValue(option.value);
       var checkedClass = checked ? this.setClassNamespace('checked') : null;
       var checkedIcon = checked ? <Icon icon="check" /> : null;
@@ -199,10 +199,12 @@ var InfiniteSelected = createReactClass({
 
   setDropdownWidth: function () {
     if (this.isMounted()) {
-      var toggleButton = ReactDOM.findDOMNode(this.refs.dropdown.
-        refs.dropdownToggle);
+      var that = this;
+      setTimeout(function() {
+        var toggleButton = ReactDOM.findDOMNode(that.refs.dropdown.refs.dropdownToggle);
 
-      toggleButton && this.setState({ dropdownWidth: toggleButton.offsetWidth });
+        toggleButton && that.setState({ dropdownWidth: toggleButton.offsetWidth });
+      }, 300);
     }
   },
 
@@ -376,11 +378,12 @@ var InfiniteSelected = createReactClass({
             <Input
               onChange={this.handleUserInput}
               autoComplete="off"
-              standalone
+              standalone="on"
               ref="filterInput"
               />
           </div>) : null}
-        <Infinite
+        <ul className="am-selected-list">
+          <Infinite
             elementHeight={36}
             containerHeight={200}
             loadingSpinnerDelegate={this.elementInfiniteLoad()}
@@ -390,6 +393,7 @@ var InfiniteSelected = createReactClass({
             >
             {this.state.items}
           </Infinite>
+        </ul>
         <input
           name={this.props.name}
           type="hidden"

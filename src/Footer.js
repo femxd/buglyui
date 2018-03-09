@@ -11,7 +11,7 @@ var Footer = createReactClass({
 
   propTypes: {
     theme: PropTypes.oneOf(['default']),
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     mobileTitle: PropTypes.string,
     mobileLink: PropTypes.string,
     desktopTitle: PropTypes.string,
@@ -23,7 +23,7 @@ var Footer = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'footer',
+      classprefix: 'footer',
       theme: 'default',
       mobileTitle: '适配版',
       desktopTitle: '电脑版'
@@ -37,7 +37,7 @@ var Footer = createReactClass({
     return (
       <footer
         {...this.props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         <div className={this.prefixClass('switch')}>

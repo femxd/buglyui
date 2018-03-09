@@ -10,7 +10,7 @@ var PanelGroup = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    amStyle: PropTypes.string,
+    amstyle: PropTypes.string,
     activeKey: PropTypes.any,
     defaultActiveKey: PropTypes.any,
     onSelect: PropTypes.func,
@@ -19,7 +19,7 @@ var PanelGroup = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'panel-group'
+      classprefix: 'panel-group'
     };
   },
 
@@ -57,7 +57,7 @@ var PanelGroup = createReactClass({
       this.props.activeKey : this.state.activeKey;
 
     var props = {
-      amStyle: child.props.amStyle || this.props.amStyle,
+      amstyle: child.props.amstyle || this.props.amstyle,
       key: child.key ? child.key : index,
       ref: child.ref
     };

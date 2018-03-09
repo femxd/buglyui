@@ -10,14 +10,14 @@ var ButtonGroup = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
+    classprefix: PropTypes.string.isRequired,
     stacked: PropTypes.bool,
     justify: PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'btn-group'
+      classprefix: 'btn-group'
     };
   },
 

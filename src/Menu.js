@@ -13,7 +13,7 @@ var Menu = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'dropdown1', 'dropdown2',
       'slide1', 'stack']),
     data: PropTypes.array,
@@ -26,7 +26,7 @@ var Menu = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'menu',
+      classprefix: 'menu',
       theme: 'default',
       data: [],
       onSelect: function() {}
@@ -186,7 +186,7 @@ var Menu = createReactClass({
     return (
       <nav
         {...props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         {this.renderMenuToggle()}

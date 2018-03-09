@@ -24,13 +24,13 @@ var Input = createReactClass({
     disabled: PropTypes.bool,
     radius: PropTypes.bool,
     round: PropTypes.bool,
-    amSize: PropTypes.oneOf(['sm', 'lg']),
-    amStyle: PropTypes.string,
+    amsize: PropTypes.oneOf(['sm', 'lg']),
+    amstyle: PropTypes.string,
     validation: PropTypes.oneOf(['default','success', 'warning', 'error']),
     label: PropTypes.node,
     help: PropTypes.node,
     addonBefore: PropTypes.node,
-    addonAfter: PropTypes.node,
+    addonafter: PropTypes.node,
     btnBefore: PropTypes.node,
     btnAfter: PropTypes.node,
     id: PropTypes.string,
@@ -39,7 +39,7 @@ var Input = createReactClass({
     labelClassName: PropTypes.string,
     helpClassName: PropTypes.string,
     icon: PropTypes.string,
-    standalone: PropTypes.bool,
+    standalone: PropTypes.string,
     inline: PropTypes.bool,
     hasFeedback: PropTypes.bool
 },
@@ -98,8 +98,8 @@ var Input = createReactClass({
     classSet[constants.CLASSES.round] = this.props.round;
     classSet[constants.CLASSES.radius] = this.props.radius;
 
-    if (this.props.amSize && !this.props.standalone) {
-      classSet[this.setClassNamespace('input-' + this.props.amSize)] = true;
+    if (this.props.amsize && !this.props.standalone) {
+      classSet[this.setClassNamespace('input-' + this.props.amsize)] = true;
     }
 
     var classes = classNames(this.props.className, fieldClassName, classSet);
@@ -216,9 +216,9 @@ var Input = createReactClass({
         {this.props.addonBefore}
       </span>
     ) : null;
-    var addonAfter = this.props.addonAfter ? (
-      <span className={addonClassName} key="addonAfter">
-        {this.props.addonAfter}
+    var addonafter = this.props.addonafter ? (
+      <span className={addonClassName} key="addonafter">
+        {this.props.addonafter}
       </span>
     ) : null;
     var btnBefore = this.props.btnBefore ? (
@@ -233,15 +233,15 @@ var Input = createReactClass({
     ) : null;
     var classSet = {};
 
-    if (this.props.amSize) {
-      classSet[groupPrefix + '-' + this.props.amSize] = true;
+    if (this.props.amsize) {
+      classSet[groupPrefix + '-' + this.props.amsize] = true;
     }
 
-    if (this.props.amStyle) {
-      classSet[groupPrefix + '-' + this.props.amStyle] = true;
+    if (this.props.amstyle) {
+      classSet[groupPrefix + '-' + this.props.amstyle] = true;
     }
 
-    return addonBefore || addonAfter || btnBefore || btnAfter ? (
+    return addonBefore || addonafter || btnBefore || btnAfter ? (
       <div
         className={classNames(groupPrefix, classSet)}
         key="inputGroup"
@@ -249,7 +249,7 @@ var Input = createReactClass({
         {addonBefore}
         {btnBefore}
         {children}
-        {addonAfter}
+        {addonafter}
         {btnAfter}
       </div>
     ) : children;
@@ -309,7 +309,7 @@ var Input = createReactClass({
       <FormGroup
         className={groupClassName}
         validation={this.props.validation}
-        amSize={this.props.amSize}
+        amsize={this.props.amsize}
         hasFeedback={this.props.hasFeedback}
       >
         {[

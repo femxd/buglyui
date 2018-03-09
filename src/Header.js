@@ -12,7 +12,7 @@ var Header = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default']),
     data: PropTypes.object,
     fixed: PropTypes.bool,
@@ -23,7 +23,7 @@ var Header = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'header',
+      classprefix: 'header',
       theme: 'default',
       onSelect: function() {}
     };
@@ -96,7 +96,7 @@ var Header = createReactClass({
     return (
       <header
         {...omit(this.props, ['data', 'title'])}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         {this.renderNav('left')}

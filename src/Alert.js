@@ -10,15 +10,15 @@ var Alert = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired,
-    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning',
+    classprefix: PropTypes.string.isRequired,
+    amstyle: PropTypes.oneOf(['secondary', 'success', 'warning',
       'danger']),
     onClose: PropTypes.func
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'alert'
+      classprefix: 'alert'
     };
   },
 
@@ -38,8 +38,8 @@ var Alert = createReactClass({
     var classSet = this.getClassSet();
     var isCloseable = !!this.props.onClose;
 
-    if (this.props.amStyle) {
-      classSet[this.prefixClass(this.props.amStyle)] = true;
+    if (this.props.amstyle) {
+      classSet[this.prefixClass(this.props.amstyle)] = true;
     }
 
     classSet[this.prefixClass('closeable')] = isCloseable;

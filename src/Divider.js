@@ -11,12 +11,12 @@ var Divider = createReactClass({
 
   propTypes: {
     theme: PropTypes.oneOf(['default', 'dotted', 'dashed']),
-    classPrefix: PropTypes.string
+    classprefix: PropTypes.string
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'divider',
+      classprefix: 'divider',
       theme: 'default'
     };
   },
@@ -27,7 +27,7 @@ var Divider = createReactClass({
     return (
       <hr
         {...this.props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       />
     );

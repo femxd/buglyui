@@ -16,7 +16,7 @@ var Sticky = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     media: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
@@ -31,7 +31,7 @@ var Sticky = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'sticky',
+      classprefix: 'sticky',
       top: 0
     };
   },

@@ -12,7 +12,7 @@ var Gallery = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'overlay', 'bordered',
       'imgbordered']),
     data: PropTypes.array,
@@ -23,7 +23,7 @@ var Gallery = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'gallery',
+      classprefix: 'gallery',
       theme: 'default',
       data: []
     };
@@ -71,7 +71,7 @@ var Gallery = createReactClass({
 
   render: function() {
     var classSet = this.getClassSet();
-    var props = omit(this.props, ['classPrefix', 'data', 'theme']);
+    var props = omit(this.props, ['classprefix', 'data', 'theme']);
 
     return (
       <AvgGrid
@@ -79,7 +79,7 @@ var Gallery = createReactClass({
         sm={this.props.sm || 2}
         md={this.props.md || 3}
         lg={this.props.lg || 4}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         {this.props.data.map(function(item, i) {

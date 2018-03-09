@@ -27,7 +27,7 @@ var DatePicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker',
+      classprefix: 'datepicker',
       date: new Date(),
       daysOfWeekDisabled: [],
       viewMode: 'days',
@@ -323,7 +323,7 @@ var DaysPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 
@@ -501,7 +501,7 @@ var MonthsPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 
@@ -574,7 +574,7 @@ var YearsPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 
@@ -636,7 +636,7 @@ var SubPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 

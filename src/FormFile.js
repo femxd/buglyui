@@ -22,7 +22,7 @@ var FormFile = createReactClass({
       <FormGroup
         className={this.setClassNamespace('form-file')}
       >
-        <Input type='file' standalone />
+        <Input type='file' standalone="on" />
       </FormGroup>
     );
   }

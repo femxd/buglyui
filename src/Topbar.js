@@ -33,7 +33,7 @@ var Topbar = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'topbar',
+      classprefix: 'topbar',
       component: 'header'
     };
   },
@@ -107,7 +107,7 @@ var Topbar = createReactClass({
 
     return (
       <Button
-        amSize="sm"
+        amsize="sm"
         onClick={this.handleToggle}
         className={classNames(this.prefixClass('btn'),
         this.prefixClass('toggle'), this.setClassNamespace('show-sm-only'))}

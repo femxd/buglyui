@@ -12,18 +12,18 @@ var Thumbnails = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string
+    classprefix: PropTypes.string
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'thumbnails'
+      classprefix: 'thumbnails'
     };
   },
 
   render: function() {
     var classes = classNames(this.getClassSet(), this.props.className);
-    var props = omit(this.props, 'classPrefix');
+    var props = omit(this.props, 'classprefix');
 
     return (
       <AvgGrid

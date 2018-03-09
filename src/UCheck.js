@@ -19,7 +19,7 @@ var UCheck = createReactClass({
   propTypes: {
     type: PropTypes.oneOf(['radio', 'checkbox']),
     disabled: PropTypes.bool,
-    amStyle: PropTypes.oneOf(['secondary', 'success', 'warning',
+    amstyle: PropTypes.oneOf(['secondary', 'success', 'warning',
       'danger']),
     inline: PropTypes.bool,
     hasFeedback: PropTypes.bool
@@ -38,8 +38,8 @@ var UCheck = createReactClass({
     classSet[this.setClassNamespace(this.props.type + '-inline')] =
       this.props.inline;
 
-    if (this.props.amStyle) {
-      classSet[this.setClassNamespace(this.props.amStyle)] = true;
+    if (this.props.amstyle) {
+      classSet[this.setClassNamespace(this.props.amstyle)] = true;
     }
 
     return (
@@ -48,7 +48,7 @@ var UCheck = createReactClass({
           {...this.props}
           ref="field"
           className={this.setClassNamespace('ucheck-checkbox')}
-          standalone
+          standalone="on"
         />
 
         <span className={this.setClassNamespace('ucheck-icons')}>

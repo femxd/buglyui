@@ -17,7 +17,7 @@ var DateTimePicker = createReactClass({
     showTimePicker: PropTypes.bool,
     showDatePicker: PropTypes.bool,
     caretDisplayed: PropTypes.bool,
-    amStyle: PropTypes.oneOf(['success', 'danger', 'warning']),
+    amstyle: PropTypes.oneOf(['success', 'danger', 'warning']),
     viewMode: PropTypes.string,
     minViewMode: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
@@ -33,7 +33,7 @@ var DateTimePicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker',
+      classprefix: 'datepicker',
       dateTime: '',
       format: 'YYYY-MM-DD HH:mm',
       showTimePicker: true,
@@ -178,8 +178,8 @@ var DateTimePicker = createReactClass({
   render: function() {
     var classSet = this.getClassSet();
 
-    this.props.amStyle &&
-    (classSet[this.prefixClass(this.props.amStyle)] = true);
+    this.props.amstyle &&
+    (classSet[this.prefixClass(this.props.amstyle)] = true);
 
     return (
       <div

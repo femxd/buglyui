@@ -12,7 +12,7 @@ var Titlebar = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'multi', 'cols']),
     nav: PropTypes.array,
     title: PropTypes.node
@@ -20,7 +20,7 @@ var Titlebar = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'titlebar',
+      classprefix: 'titlebar',
       theme: 'default',
       data: []
     };
@@ -28,12 +28,12 @@ var Titlebar = createReactClass({
 
   render: function() {
     var classSet = this.getClassSet();
-    var props = omit(this.props, ['classPrefix', 'nav', 'theme']);
+    var props = omit(this.props, ['classprefix', 'nav', 'theme']);
 
     return (
       <div
         {...props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         <h2 className={this.prefixClass('title')}>

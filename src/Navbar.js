@@ -12,7 +12,7 @@ var Navbar = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default']),
     data: PropTypes.array,
     onSelect: PropTypes.func
@@ -20,7 +20,7 @@ var Navbar = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'navbar',
+      classprefix: 'navbar',
       theme: 'default',
       data: [],
       onSelect: function() {}
@@ -34,7 +34,7 @@ var Navbar = createReactClass({
     return (
       <div
         {...props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         cf
         className={classNames(this.props.className, classSet)}
       >

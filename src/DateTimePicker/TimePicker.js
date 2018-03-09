@@ -17,7 +17,7 @@ var TimePicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker',
+      classprefix: 'datepicker',
       format: 'HH:mm'
     };
   },
@@ -218,7 +218,7 @@ var HoursPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 
@@ -276,7 +276,7 @@ var MinutesPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 
@@ -332,7 +332,7 @@ var SubPicker = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'datepicker'
+      classprefix: 'datepicker'
     };
   },
 

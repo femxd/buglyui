@@ -10,12 +10,12 @@ var ButtonToolbar = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string.isRequired
+    classprefix: PropTypes.string.isRequired
   },
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'btn-toolbar'
+      classprefix: 'btn-toolbar'
     };
   },
 

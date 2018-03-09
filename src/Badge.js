@@ -18,7 +18,7 @@ var Badge = createReactClass({
 
   getDefaultProps: function () {
     return {
-      classPrefix: 'badge',
+      classprefix: 'badge',
       component: 'span'
     };
   },

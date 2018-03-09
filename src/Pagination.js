@@ -23,7 +23,7 @@ var Pagination = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'pagination',
+      classprefix: 'pagination',
       component: 'ul'
     };
   },
@@ -138,7 +138,7 @@ Pagination.Item = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'pagination',
+      classprefix: 'pagination',
       component: 'li'
     };
   },

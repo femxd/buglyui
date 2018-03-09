@@ -194,10 +194,10 @@ var PopoverTrigger = createReactClass({
       {
         onRequestHide: this.close,
         placement: this.props.placement,
-        positionLeft: this.state.popoverLeft,
-        positionTop: this.state.popoverTop,
-        amStyle: popover.props.amStyle || this.props.amStyle,
-        amSize: popover.props.amSize || this.props.amSize
+        positionleft: this.state.popoverLeft,
+        positiontop: this.state.popoverTop,
+        amstyle: popover.props.amstyle || this.props.amstyle,
+        amsize: popover.props.amsize || this.props.amsize,
       }
     );
   },

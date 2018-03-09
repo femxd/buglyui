@@ -10,7 +10,7 @@ var Icon = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    amStyle: PropTypes.string,
+    amstyle: PropTypes.string,
     fw: PropTypes.bool,
     spin: PropTypes.bool,
     button: PropTypes.bool,
@@ -22,7 +22,7 @@ var Icon = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'icon',
+      classprefix: 'icon',
       component: 'span'
     };
   },
@@ -41,8 +41,8 @@ var Icon = createReactClass({
     classes[prefixClass('btn')] = props.button;
 
     // button style
-    props.button && props.amStyle &&
-    (classes[setClassNamespace(props.amStyle)] = true);
+    props.button && props.amstyle &&
+    (classes[setClassNamespace(props.amstyle)] = true);
 
     // am-icon-fw
     classes[prefixClass('fw')] = props.fw;

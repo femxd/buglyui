@@ -12,7 +12,7 @@ var ListNews = createReactClass({
   mixins: [ClassNameMixin],
 
   propTypes: {
-    classPrefix: PropTypes.string,
+    classprefix: PropTypes.string,
     theme: PropTypes.oneOf(['default']),
     data: PropTypes.object,
     header: PropTypes.node,
@@ -25,7 +25,7 @@ var ListNews = createReactClass({
 
   getDefaultProps: function() {
     return {
-      classPrefix: 'list-news',
+      classprefix: 'list-news',
       theme: 'default',
       moreText: '更多 \u00BB'
     };
@@ -213,7 +213,7 @@ var ListNews = createReactClass({
     return (
       <div
         {...this.props}
-        data-am-widget={this.props.classPrefix}
+        data-am-widget={this.props.classprefix}
         className={classNames(this.props.className, classSet)}
       >
         {this.props.header || this.renderHeader()}
